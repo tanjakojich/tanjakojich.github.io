@@ -6,21 +6,6 @@
 # `jekyll serve -l -H localhost`. If you change this file, please restart the 
 # server process.
 
-title: "Tanja Kojić"  # Your name or website title
-email: "tanja.kojic@tu-berlin.de"  # Your professional email
-description: "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
-baseurl: ""  # Leave this empty for a personal site
-url: "https://tanjakojich.github.io"  # Your GitHub Pages URL
-
-# Social media usernames (if applicable)
-github_username: "tanjakojich"
-linkedin_username: "tanjakojich"
-
-# Additional settings (optional)
-theme: "minimal-mistakes-jekyll"
-
-###########################################
-
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
@@ -366,3 +351,18 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+#############################
+
+title: "Tanja Kojić"  # Your name or website title
+email: "tanja.kojic@tu-berlin.de"  # Your professional email
+description: "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
+baseurl: ""  # Leave this empty for a personal site
+url: "https://tanjakojich.github.io"  # Your GitHub Pages URL
+
+# Social media usernames (if applicable)
+github_username: "tanjakojich"
+linkedin_username: "tanjakojich"
+
+# Additional settings (optional)
+theme: "minimal-mistakes-jekyll"
