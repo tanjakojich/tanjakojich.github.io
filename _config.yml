@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "default"
+site_theme               : "minimal-mistakes-jekyll"
 title                    : "Your Name / Site Title"
 title_separator          : "-"
 name                     : &name "Your Name"
@@ -354,15 +354,15 @@ compress_html:
 
 #############################
 
-title: "Tanja Kojić"  # Your name or website title
-email: "tanja.kojic@tu-berlin.de"  # Your professional email
-description: "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
-baseurl: ""  # Leave this empty for a personal site
-url: "https://tanjakojich.github.io"  # Your GitHub Pages URL
+#title: "Tanja Kojić"  # Your name or website title
+#email: "tanja.kojic@tu-berlin.de"  # Your professional email
+#description: "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
+#baseurl: ""  # Leave this empty for a personal site
+#url: "https://tanjakojich.github.io"  # Your GitHub Pages URL
 
 # Social media usernames (if applicable)
-github_username: "tanjakojich"
-linkedin_username: "tanjakojich"
+#github_username: "tanjakojich"
+#linkedin_username: "tanjakojich"
 
 # Additional settings (optional)
-theme: "minimal-mistakes-jekyll"
+#theme: "minimal-mistakes-jekyll"
