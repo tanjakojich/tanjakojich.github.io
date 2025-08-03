@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Tanja Kojić"
+title                    : "Research Profile"
 title_separator          : "-"
-name                     : &name "Tanja"
+name                     : &name "Dr. Tanja Kojić"
 description              : &description "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
 url                      : "https://tanjakojich.github.io" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,10 +22,10 @@ baseurl                  : "" # the subpath of your site, e.g. "/blog"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile_tanja.png"
   name             : "Dr. Tanja Kojić"
   #pronouns         : # example: "she/her"  
-  bio              : "Researcher in Immersive Media, User Experience, and Multimedia Quality"
+  bio              : "Researcher in Immersive Media, Human-Computer Interaction, User Experience, and Multimedia Quality of Experience"
   location         : "Berlin, Germany"
   employer         : "TU Berlin"
   uri              : # URL
@@ -76,7 +76,7 @@ author:
   #zhihu            : # Username
 
 # Keywords for SEO
-keywords: "Immersive Media, User Experience, Multimedia Quality, Virtual Reality, Augmented Reality, Extended Reality, HCI, QoE, QU Lab" 
+keywords: "Immersive Media, Human-Computer Interaction, User Experience, Multimedia Quality, Virtual Reality, Augmented Reality, Extended Reality, HCI, QoE, QU Lab" 
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
@@ -121,7 +121,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 
