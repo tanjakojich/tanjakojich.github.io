@@ -155,7 +155,21 @@
       {% endif %}
       {% if author.zhihu %}
       <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
-      {% endif %}      
+      {% endif %}
+      
+      <!-- Research Interests -->
+      {% if author.research_interests %}
+        <li class="author__desktop" style="margin-bottom: 0.3em; margin-top: 0.8em;">
+          <strong>Research Interests</strong>
+        </li>
+        <li style="padding-left: 0; list-style: none; margin-bottom: 0.8em;">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+            {% for interest in author.research_interests %}
+              <span style="display: inline-block; padding: 0.25rem 0.5rem; background-color: #f0f0f0; border-radius: 3px; font-size: 0.7rem; color: #333;">{{ interest }}</span>
+            {% endfor %}
+          </div>
+        </li>
+      {% endif %}
     </ul>
   </div>
 </div>

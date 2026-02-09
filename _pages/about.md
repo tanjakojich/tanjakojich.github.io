@@ -132,11 +132,11 @@ Promoting inclusive, transparent, and participant-aware methodologies in digital
   </div>
 </div>
 
+---
+
 ## About Me
 
-I am Dr. Tanja Kojić, a researcher specializing in immersive technologies, human–computer interaction (HCI), and user experience (UX).  
-My work bridges psychology, interaction design, and technology, focusing on how people perceive, interact with, and trust immersive systems.  
-I am particularly interested in designing XR environments that are inclusive, accessible, and ethically grounded.
+I am Dr. Tanja Kojić, a researcher specializing in immersive technologies, human–computer interaction (HCI), and user experience (UX). My work bridges psychology, interaction design, and technology, focusing on how people perceive, interact with, and trust immersive systems. I am particularly interested in designing XR environments that are inclusive, accessible, and ethically grounded.
 
 <!-- Welcome. I’m Dr. Tanja Kojić — a UX and HCI researcher focused on immersive technologies, with expertise in user experience, accessibility, and the ethical implications of interactive systems.  
 My work combines experimental design, technical implementation, and human insight to better understand how users engage with XR environments in both research and public settings. -->

@@ -25,11 +25,26 @@ author:
   avatar           : "profile_tanja2.png"
   name             : "Dr. Tanja Kojić"
   #pronouns         : # example: "she/her"  
-  bio              : "Researcher in Immersive Media, Human-Computer Interaction, User Experience, and Multimedia Quality of Experience"
+  #bio              : "Researcher in Immersive Media, Human-Computer Interaction, User Experience, and Multimedia Quality of Experience"
+  bio              : " "
   location         : "Berlin, Germany"
   employer         : "TU Berlin"
   uri              : # URL
   #email            : "none@example.org"
+  
+  # Research Interests
+  research_interests:
+    - "Immersive Media"
+    - "Human-Computer Interaction"
+    - "User Experience"
+    - "Intelligent Multimedia Systems"
+    - "Quality of Experience"
+    - "User Research"
+    - "Usability"
+    - "Accessibility"
+    - "Inclusivity"
+    - "Information Architecture"
+    - "Cognitive Psychology"
 
   # Academic websites
   #arxiv            : # URL - Update with the correct link to your profile
