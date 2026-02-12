@@ -120,10 +120,10 @@ Promoting inclusive, transparent, and participant-aware methodologies in digital
 </style>
 
 <div style="margin: 0; padding: 0 0 3rem 0;">
-  <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #333333; margin-bottom: 1.25rem;">RESEARCHER & UX DESIGNER</h2>
+  <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #333333; margin-bottom: 1.25rem;">SENIOR SCIENTIST & UX RESEARCHER</h2>
   
   <p style="font-size: 1.05em; line-height: 1.7; color: #000000; margin-bottom: 2rem; font-weight: 400;">
-    I bridge the gap between academic research and user-centered design. My work focuses on applying rigorous research methodologies to create intuitive, evidence-based user experiences.
+    My work connects academic research with real human experience. Focused on making technology work in the real world. 
   </p>
   
   <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -135,8 +135,11 @@ Promoting inclusive, transparent, and participant-aware methodologies in digital
 ---
 
 ## About Me
+I am Dr. Tanja Kojić, exploring where new media and intelligent technologies meet, and how immersive solutions shape human experience across real and virtual worlds. 
 
-I am Dr. Tanja Kojić, a researcher specializing in immersive technologies, human–computer interaction (HCI), and user experience (UX). My work bridges psychology, interaction design, and technology, focusing on how people perceive, interact with, and trust immersive systems. I am particularly interested in designing XR environments that are inclusive, accessible, and ethically grounded.
+As a Senior Researcher at the Quality and Usability Lab (QU Lab) at TU Berlin, my work focuses on the human side of immersive systems. I investigate how factors such as interaction design, embodiment, environment, and social context shape user experience, engagement, and acceptance. Rather than looking only at technical performance, I aim to understand how technology feels to users — whether it is intuitive, safe, inclusive, and meaningful in real-world situations. 
+
+My research combines experimental studies, user experience evaluation, and interdisciplinary collaboration. I work closely with academic and industry partners across Europe, contributing to projects that explore immersive technologies in areas such as education, mobility, and digital culture. Alongside research, I am passionate about teaching and mentoring students, and about translating complex technological concepts into accessible knowledge. I strongly believe that the future of immersive technology depends not only on what is technically possible, but on what is valuable and usable for people.
 
 <!-- Welcome. I’m Dr. Tanja Kojić — a UX and HCI researcher focused on immersive technologies, with expertise in user experience, accessibility, and the ethical implications of interactive systems.  
 My work combines experimental design, technical implementation, and human insight to better understand how users engage with XR environments in both research and public settings. -->
