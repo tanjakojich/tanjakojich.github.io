@@ -148,27 +148,15 @@ My work combines experimental design, technical implementation, and human insigh
 
 ## Research Focus
 
-**Trust & Safety in XR**  
-Designing and evaluating user experiences in socially complex and physically shared immersive spaces.
+- **Human Experience in XR** --
+Measuring, modelling, and improving user experience, performance, and well-being in immersive environments. This includes investigating presence, engagement, comfort, and technology acceptance, with a focus on understanding how immersive systems perform in real-world use and during longer-term interaction.
 
-**Human–AI Interaction**  
-Studying how AI-powered avatars and assistants shape collaboration, emotion, and agency in immersive contexts.
+- **Intelligent and Multimodal Interaction** -- 
+Designing adaptive, multimodal, and AI-supported interaction systems for immersive and interactive media. This includes exploring how combinations of modalities support natural, efficient, and accessible interaction in complex digital environments.
 
-**Ethical UX Research**  
-Promoting inclusive, transparent, and participant-aware methodologies in digital twin and XR-based research.
+- **Real-World Context** -- 
+Studying how immersive and interactive technologies are experienced, adopted, and used in real-life environments. This includes applications in domains such as education, culture, mobility, and safety, with a focus on translating technological innovation into solutions that create measurable value for users, organisations, and society.
 
-- **Immersive Media Experience (VR/AR/XR)** — Understanding how visual, auditory, and interactive elements shape presence, engagement, and comfort.
-- **Human–AI Interaction** — Studying how AI-driven avatars and assistants influence collaboration, communication, and emotional engagement.
-- **Ethics and Accessibility in Design** — Developing research and design practices that prioritize inclusivity, transparency, and user well-being.
-- **Digital Twins** — Exploring human factors, trust, and usability in virtual representations of real-world systems.
-
----
-
-
-## Current Role
-
-I work at the **Quality and Usability Lab** at **TU Berlin**, contributing to national and EU-funded projects in the fields of immersive media, AI, and digital twins.  
-I collaborate closely with interdisciplinary teams, bridging technical innovation with human-centered research methodologies.
 
 ---
 
