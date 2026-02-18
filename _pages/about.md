@@ -132,7 +132,7 @@ Promoting inclusive, transparent, and participant-aware methodologies in digital
   </div>
 </div>
 
----
+
 
 ## About Me
 I am Dr. Tanja Kojić, exploring where new media and intelligent technologies meet, and how immersive solutions shape human experience across real and virtual worlds. 
@@ -144,7 +144,6 @@ My research combines experimental studies, user experience evaluation, and inter
 <!-- Welcome. I’m Dr. Tanja Kojić — a UX and HCI researcher focused on immersive technologies, with expertise in user experience, accessibility, and the ethical implications of interactive systems.  
 My work combines experimental design, technical implementation, and human insight to better understand how users engage with XR environments in both research and public settings. -->
 
----
 
 ## Research Focus
 
@@ -157,8 +156,6 @@ Designing adaptive, multimodal, and AI-supported interaction systems for immersi
 - **Real-World Context** -- 
 Studying how immersive and interactive technologies are experienced, adopted, and used in real-life environments. This includes applications in domains such as education, culture, mobility, and safety, with a focus on translating technological innovation into solutions that create measurable value for users, organisations, and society.
 
-
----
 
 ## Recent Work
 
@@ -184,14 +181,12 @@ Studying how immersive and interactive technologies are experienced, adopted, an
 
 </div>
 
----
 
 ## Beyond Research
 
 I enjoy transforming complex research into interactive experiences for the public and academic communities.  
 Whether in a lab, a classroom, or a science festival, I strive to make immersive technologies understandable, approachable, and beneficial to a wide audience.
 
----
 
 <div style="text-align: center; margin-top: 3rem;">
 <em>“Design is not just how it looks — it's how it makes people feel.”</em>
