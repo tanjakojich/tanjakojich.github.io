@@ -166,8 +166,8 @@ Studying how immersive and interactive technologies are experienced, adopted, an
     <i class="fa fa-file-alt" style="font-size: 1.2rem; margin-right: 0.5rem; color: #666;"></i>
     <span style="font-weight: 400; color: #666; font-size: 0.875rem;">Latest Publication</span>
   </div>
-  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4; color: #1a1a1a;">Understanding User Behavior in Complex Systems</h3>
-  <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">A mixed-methods study examining how users navigate information-dense interfaces.</p>
+  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4;"><a href="https://dl.acm.org/doi/full/10.1145/3756884.3766019" target="_blank" style="color: #1a1a1a; text-decoration: none; transition: text-decoration 0.2s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Investigating the Effect of Prior Exposure and Fidelity on Quality and Realism...</a></h3>
+  <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">A study showed that what users have seen before and how detailed the virtual environment looks strongly affect how real and high-quality the VR twin feels.</p>
 </div>
 
 <div style="flex: 1; min-width: 300px; border: 1px solid #e8e8e8; border-radius: 8px; padding: 2rem; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
@@ -175,8 +175,8 @@ Studying how immersive and interactive technologies are experienced, adopted, an
     <i class="fa fa-briefcase" style="font-size: 1.2rem; margin-right: 0.5rem; color: #666;"></i>
     <span style="font-weight: 400; color: #666; font-size: 0.875rem;">Recent Project</span>
   </div>
-  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4; color: #1a1a1a;">Healthcare App Redesign</h3>
-  <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">Redesigning a patient portal to improve accessibility and reduce cognitive load.</p>
+  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4;"><a href="https://didymos-xr.eu/" target="_blank" style="color: #1a1a1a; text-decoration: none; transition: text-decoration 0.2s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">DIDYMOS-XR Project</a></h3>
+  <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">Advancing real-time digital twins by combining multi-sensor data and AI to create immersive XR experiences that closely mirror and interact with the physical world.</p>
 </div>
 
 </div>
