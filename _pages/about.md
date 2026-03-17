@@ -178,22 +178,3 @@ Studying how immersive and interactive technologies are experienced, adopted, an
   <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4;"><a href="https://didymos-xr.eu/" target="_blank" style="color: #1a1a1a; text-decoration: none; transition: text-decoration 0.2s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">DIDYMOS-XR Project</a></h3>
   <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">Advancing real-time digital twins by combining multi-sensor data and AI to create immersive XR experiences that closely mirror and interact with the physical world.</p>
 </div>
-
-</div>
-
-
-## Beyond Research
-
-I enjoy transforming complex research into interactive experiences for the public and academic communities.  
-Whether in a lab, a classroom, or a science festival, I strive to make immersive technologies understandable, approachable, and beneficial to a wide audience.
-
-
-<div style="text-align: center; margin-top: 3rem;">
-<em>“Design is not just how it looks — it's how it makes people feel.”</em>
-</div>
-
-
----
-
-<p style="text-align:center;"><em>“Research is not just about finding answers — it's about asking the right questions.”</em></p>
-
