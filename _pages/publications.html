@@ -5,32 +5,171 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<p style="color:#555; margin-top:-0.5em; margin-bottom:2em; font-size:1em;">A collection of my research publications and academic work</p>
 
-{% include base_path %}
+<style>
+  .pub-section h2 {
+    font-weight: 800;
+    margin-top: 3em;
+    margin-bottom: 1.25em;
+  }
+  .pub-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1em 1.25em;
+    margin-bottom: 0.75em;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  .pub-card-body {
+    flex: 1;
+  }
+  .pub-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 0.25em 0;
+  }
+  .pub-authors {
+    font-size: 0.88em;
+    color: #555;
+    margin: 0 0 0.2em 0;
+  }
+  .pub-meta {
+    font-size: 0.85em;
+    color: #555;
+    font-style: italic;
+    margin: 0;
+  }
+  .pub-meta a {
+    font-style: normal;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+  }
+  .pub-meta a:hover { text-decoration: underline; }
+  .pub-badge {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0.2em 0.65em;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 0.15em;
+  }
+  .badge-journal    { background: #e8eeff; color: #3b5bdb; }
+  .badge-conference { background: #e6faf0; color: #2f9e5e; }
+  .badge-workshop   { background: #f3e8ff; color: #7c3aed; }
+</style>
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<!-- ═══════════════════════════════════════════
+     AFFECTIVE COMPUTING
+     ═══════════════════════════════════════════ -->
+<div class="pub-section">
+<h2>Affective Computing</h2>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Emotion Recognition from Physiological Signals in VR</p>
+    <p class="pub-authors">John Doe, Jane Smith</p>
+    <p class="pub-meta"><em>IEEE Transactions on Affective Computing</em> &nbsp;•&nbsp; 2024 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-journal">Journal</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Real-Time Stress Detection Using Multimodal Sensor Data</p>
+    <p class="pub-authors">Robert Johnson, John Doe, Alice Williams</p>
+    <p class="pub-meta"><em>ACM ICMI</em> &nbsp;•&nbsp; 2024 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-conference">Conference</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Affective Adaptation in Interactive Learning Environments</p>
+    <p class="pub-authors">John Doe, Sarah Davis</p>
+    <p class="pub-meta"><em>International Journal of Artificial Intelligence in Education</em> &nbsp;•&nbsp; 2023 &nbsp;•&nbsp; <a href="#">Paper</a></p>
+  </div>
+  <span class="pub-badge badge-journal">Journal</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Facial Expression Analysis for User Experience Assessment</p>
+    <p class="pub-authors">Emily Chen, John Doe</p>
+    <p class="pub-meta"><em>Workshop on Affective Computing and Intelligent Interaction</em> &nbsp;•&nbsp; 2023 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-workshop">Workshop</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Emotional State Prediction Using Machine Learning</p>
+    <p class="pub-authors">John Doe, Michael Brown, Jane Smith</p>
+    <p class="pub-meta"><em>ACM Transactions on Interactive Intelligent Systems</em> &nbsp;•&nbsp; 2022 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-journal">Journal</span>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     QoE & METHODOLOGY
+     ═══════════════════════════════════════════ -->
+<div class="pub-section">
+<h2>QoE &amp; Methodology</h2>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Perceptual Quality Assessment in 360-Degree Video Streaming</p>
+    <p class="pub-authors">John Doe, Jane Smith</p>
+    <p class="pub-meta"><em>IEEE Transactions on Multimedia</em> &nbsp;•&nbsp; 2024 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-journal">Journal</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">A Novel Framework for Real-Time Data Processing in Distributed Systems</p>
+    <p class="pub-authors">John Doe, Alice Williams</p>
+    <p class="pub-meta"><em>ACM International Conference on Computing</em> &nbsp;•&nbsp; 2023 &nbsp;•&nbsp; <a href="#">Paper</a></p>
+  </div>
+  <span class="pub-badge badge-conference">Conference</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Efficient Algorithms for Graph Neural Networks</p>
+    <p class="pub-authors">John Doe, Michael Brown, Sarah Davis</p>
+    <p class="pub-meta"><em>Neural Information Processing Systems (NeurIPS)</em> &nbsp;•&nbsp; 2023 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-conference">Conference</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Privacy-Preserving Machine Learning: A Survey</p>
+    <p class="pub-authors">Jane Smith, John Doe</p>
+    <p class="pub-meta"><em>IEEE Transactions on Information Forensics and Security</em> &nbsp;•&nbsp; 2022 &nbsp;•&nbsp; <a href="#">DOI</a></p>
+  </div>
+  <span class="pub-badge badge-journal">Journal</span>
+</div>
+
+<div class="pub-card">
+  <div class="pub-card-body">
+    <p class="pub-title">Transfer Learning in Computer Vision Applications</p>
+    <p class="pub-authors">John Doe</p>
+    <p class="pub-meta"><em>International Workshop on Deep Learning</em> &nbsp;•&nbsp; 2022 &nbsp;•&nbsp; <a href="#">Paper</a></p>
+  </div>
+  <span class="pub-badge badge-workshop">Workshop</span>
+</div>
+</div>
+
 
 
 
