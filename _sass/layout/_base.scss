@@ -5,6 +5,7 @@ html {
   /* sticky footer fix */
   position: relative;
   min-height: 100%;
+  scroll-padding-top: $masthead-height + 30px;
 }
 
 body {
@@ -29,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-family: $header-font-family;
   font-weight: bold;
+  scroll-margin-top: $masthead-height + 30px;
 }
 
 h1 {
