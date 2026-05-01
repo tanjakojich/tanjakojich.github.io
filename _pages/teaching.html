@@ -1,12 +1,264 @@
 ---
 layout: archive
-title: "Teaching"
+title: "Teaching & Mentoring"
 permalink: /teaching/
 author_profile: true
 ---
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+  .teaching-hero-desc {
+    color: #555;
+    font-size: 0.88em;
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
+  .teaching-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1.2em;
+    margin-top: 2em;
+  }
+  .teaching-section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    background: #1a1a2e;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1em;
+  }
+  .course-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1em 1.3em;
+    margin-bottom: 1em;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+  }
+  .course-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .course-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+  .course-title {
+    font-weight: 600;
+    font-size: 1em;
+    color: #1a1a2e;
+  }
+  .role-badge {
+    font-size: 0.72em;
+    padding: 0.2em 0.6em;
+    border-radius: 4px;
+    font-weight: 500;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #f0f0f0;
+  }
+  .role-badge.ta {
+    background: #fff;
+    color: #333;
+    border-color: #f0f0f0;
+  }
+  .course-dates {
+    font-size: 0.82em;
+    color: #888;
+    white-space: nowrap;
+    padding-top: 0.15em;
+  }
+  .course-desc {
+    font-size: 0.88em;
+    color: #444;
+    margin-top: 0.1em;
+  }
+  .course-venue {
+    font-size: 0.82em;
+    color: #888;
+  }
+  .supervision-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.4em;
+    background: #fff;
+  }
+  .supervision-card h3 {
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  .supervision-card p {
+    font-size: 0.88em;
+    color: #444;
+  }
+  .supervision-columns {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    margin-top: 1em;
+  }
+  .supervision-col h4 {
+    font-size: 0.88em;
+    font-weight: 600;
+    margin-bottom: 0.4em;
+    margin-top: 0;
+    color: #1a1a2e;
+  }
+  .supervision-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85em;
+    color: #444;
+  }
+  .supervision-col ul li::before {
+    content: "• ";
+    color: #888;
+  }
+</style>
+
+<p class="teaching-hero-desc">Over a decade of experience teaching computer science, from information theory to cutting-edge topics in AR/VR and IoT</p>
+
+<div class="teaching-section-header">
+  <span class="teaching-section-icon">📖</span>
+  Courses
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Information Theory</span>
+      <span class="role-badge lecturer">Lecturer</span>
+    </div>
+    <span class="course-dates">2013–2026</span>
+  </div>
+  <div class="course-desc">Fundamental concepts in information theory, entropy, coding, and data compression</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Augmented Reality Learning</span>
+      <span class="role-badge lecturer">Lecturer</span>
+    </div>
+    <span class="course-dates">2024–2026</span>
+  </div>
+  <div class="course-desc">Is Our New TUI Interface? Exploring tangible user interfaces and AR applications in educational contexts</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Gamification in Education</span>
+      <span class="role-badge lecturer">Lecturer</span>
+    </div>
+    <span class="course-dates">2024–2026</span>
+  </div>
+  <div class="course-desc">Games/Play in Education – applying game design principles to create engaging learning experiences</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Data Visualization</span>
+      <span class="role-badge lecturer">Lecturer</span>
+    </div>
+    <span class="course-dates">2024–2026</span>
+  </div>
+  <div class="course-desc">Interactive Visual Exploration of Data – techniques for creating meaningful and interactive visualizations</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Sensor Networks and IoT</span>
+      <span class="role-badge lecturer">Lecturer</span>
+    </div>
+    <span class="course-dates">2024–2026</span>
+  </div>
+  <div class="course-desc">Internet of Things architectures, protocols, and applications in modern connected systems</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Virtual Reality and Enterprising Realities</span>
+      <span class="role-badge lecturer">Lecturer</span>
+    </div>
+    <span class="course-dates">2016–2020</span>
+  </div>
+  <div class="course-desc">VR technologies and their applications in business and enterprise contexts</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Object-Oriented Programming</span>
+      <span class="role-badge ta">Teaching Assistant</span>
+    </div>
+    <span class="course-dates">2013–2016</span>
+  </div>
+  <div class="course-desc">Supporting students in learning OOP concepts and software design principles</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="course-card">
+  <div class="course-card-top">
+    <div class="course-title-row">
+      <span class="course-title">Software Architectures</span>
+      <span class="role-badge ta">Teaching Assistant</span>
+    </div>
+    <span class="course-dates">2012–2020</span>
+  </div>
+  <div class="course-desc">Teaching architectural patterns, design principles, and large-scale software system design</div>
+  <div class="course-venue">Technical University of Ostrava</div>
+</div>
+
+<div class="teaching-section-header" style="margin-top:2.5em;">
+  <span class="teaching-section-icon">🎓</span>
+  Student Supervision
+</div>
+
+<div class="supervision-card">
+  <h3>Thesis &amp; Project Mentoring</h3>
+  <p>I supervise undergraduate and graduate students in interdisciplinary media projects, guiding research at the intersection of technology, design, and user experience.</p>
+  <div class="supervision-columns">
+    <div class="supervision-col">
+      <h4>Focus Areas</h4>
+      <ul>
+        <li>Interactive media &amp; UI/UX</li>
+        <li>AR/VR applications</li>
+        <li>Data visualization</li>
+        <li>IoT &amp; sensor networks</li>
+      </ul>
+    </div>
+    <div class="supervision-col">
+      <h4>Project Types</h4>
+      <ul>
+        <li>Bachelor's theses</li>
+        <li>Master's theses</li>
+        <li>Interdisciplinary media projects</li>
+        <li>Research collaborations</li>
+      </ul>
+    </div>
+  </div>
+</div>
