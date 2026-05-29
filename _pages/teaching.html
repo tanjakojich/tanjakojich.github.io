@@ -9,10 +9,14 @@ author_profile: true
 
 <style>
   .teaching-hero-desc {
+    text-align: left;
     color: #555;
     font-size: 0.88em;
     margin-top: 0;
-    margin-bottom: 1.5em;
+    margin-bottom: 0;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
   .teaching-section-header {
     display: flex;
@@ -29,10 +33,14 @@ author_profile: true
     justify-content: center;
     width: 2em;
     height: 2em;
-    background: #1a1a2e;
-    color: #fff;
+    background: #f0f0f0;
+    color: #1a1a2e;
     border-radius: 6px;
     font-size: 1em;
+    flex-shrink: 0;
+  }
+  .teaching-section-icon i {
+    font-size: 0.85em;
   }
   .course-card {
     border: 1px solid #e0e0e0;
@@ -133,7 +141,7 @@ author_profile: true
 <p class="teaching-hero-desc">Over a decade of experience teaching computer science, from information theory to cutting-edge topics in AR/VR and IoT</p>
 
 <div class="teaching-section-header">
-  <span class="teaching-section-icon">📖</span>
+  <span class="teaching-section-icon"><i class="fas fa-book-open"></i></span>
   Courses
 </div>
 
@@ -234,7 +242,7 @@ author_profile: true
 </div>
 
 <div class="teaching-section-header" style="margin-top:2.5em;">
-  <span class="teaching-section-icon">🎓</span>
+  <span class="teaching-section-icon"><i class="fas fa-user-graduate"></i></span>
   Student Supervision
 </div>
 
