@@ -1,0 +1,36 @@
+# Talks and presentations data
+# Type options: keynote | invited | conference | media | outreach
+# Badge text is auto-generated from type, or use optional 'badge' field to override
+
+- title: "Bridging Real and Virtual: Understanding How Influencing Factors Shape XR Experiences"
+  type: keynote
+  event: "Workshop on Realistic and Virtual Social Interactions (ReViSI), IEEE VR 2025"
+  location: "Saint-Malo, France"
+  date: "March 2025"
+  sort_date: 202503
+
+- title: "Women in VR: Research in academia and the question of emotions"
+  type: media
+  badge: "Podcast"
+  event: "VR Women Podcast"
+  location: "Online"
+  date: "May 2023"
+  sort_date: 202305
+
+- title: "User Experience for Virtual Reality"
+  type: outreach
+  badge: "Science Slam"
+  event: "Software Campus Summit 2019"
+  location: "Munich, Germany"
+  date: "November 2019"
+  description: "Winner of the Science Slam, supported by Huawei."
+  sort_date: 201911
+
+- title: "Artificial Intelligence and Education - BMBF Digital Future"
+  type: outreach
+  badge: "Selected Presenter"
+  event: "Digital-Gipfel 2018"
+  location: "Nuremberg, Germany"
+  date: "December 2018"
+  description: "Presentation to Anja Karliczek, Federal Minister of Education and Research."
+  sort_date: 201812

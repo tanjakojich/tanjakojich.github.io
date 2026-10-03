@@ -1,16 +1,252 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Talks"
 permalink: /talks/
 author_profile: true
 ---
 
-{% if site.talkmap_link == true %}
+{% include base_path %}
 
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
+<style>
+  .talks-hero-desc {
+    text-align: left;
+    color: #555;
+    font-size: 0.88em;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .talks-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1.2em;
+    margin-top: 2em;
+  }
+  .talks-section-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    background: #f0f0f0;
+    color: #1a1a2e;
+    border-radius: 6px;
+    font-size: 1em;
+    flex-shrink: 0;
+  }
+  .talks-section-icon i {
+    font-size: 0.85em;
+  }
+  .talk-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1em 1.3em;
+    margin-bottom: 1em;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+  }
+  .talk-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .talk-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+  }
+  .talk-title {
+    font-weight: 600;
+    font-size: 1em;
+    color: #1a1a2e;
+  }
+  .talk-badge {
+    font-size: 0.72em;
+    padding: 0.2em 0.6em;
+    border-radius: 4px;
+    font-weight: 500;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #f0f0f0;
+  }
+  .talk-date {
+    font-size: 0.82em;
+    color: #888;
+    white-space: nowrap;
+    padding-top: 0.15em;
+  }
+  .talk-desc {
+    font-size: 0.88em;
+    color: #444;
+    margin-top: 0.1em;
+  }
+  .talk-venue {
+    font-size: 0.82em;
+    color: #888;
+  }
+  .talk-links {
+    font-size: 0.82em;
+    color: #888;
+    margin-top: 0.3em;
+  }
+  .talk-links a {
+    color: #888;
+    text-decoration: none;
+  }
+  .talk-links a:hover {
+    color: #1a1a2e;
+    text-decoration: underline;
+  }
+  .talk-links-separator {
+    margin: 0 0.3em;
+    color: #888;
+  }
 
+  @media (max-width: 600px) {
+    .talk-card-top {
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    .talk-date {
+      padding-top: 0;
+    }
+    .talks-section-header {
+      font-size: 1.05em;
+    }
+  }
+</style>
+
+<p class="talks-hero-desc">I enjoy sharing research beyond papers, from keynotes to podcasts and science slams. Below you'll find my invited talks and public appearances.</p>
+
+{% assign keynotes = site.data.talks | where: "type", "keynote" %}
+{% assign invited = site.data.talks | where: "type", "invited" %}
+{% assign keynote_invited = keynotes | concat: invited | sort: "sort_date" | reverse %}
+
+{% assign conference = site.data.talks | where: "type", "conference" | sort: "sort_date" | reverse %}
+
+{% assign media = site.data.talks | where: "type", "media" %}
+{% assign outreach = site.data.talks | where: "type", "outreach" %}
+{% assign media_outreach = media | concat: outreach | sort: "sort_date" | reverse %}
+
+{% if keynote_invited.size > 0 %}
+<div class="talks-section-header">
+  <span class="talks-section-icon"><i class="fas fa-microphone"></i></span>
+  Keynotes & Invited Talks
+</div>
+
+{% for talk in keynote_invited %}
+<div class="talk-card">
+  <div class="talk-card-top">
+    <div class="talk-title-row">
+      <span class="talk-title">"{{ talk.title }}"</span>
+      <span class="talk-badge">
+        {%- if talk.badge -%}
+          {{ talk.badge }}
+        {%- elsif talk.type == 'keynote' -%}
+          Keynote
+        {%- elsif talk.type == 'invited' -%}
+          Invited Talk
+        {%- endif -%}
+      </span>
+    </div>
+    <span class="talk-date">{{ talk.date }}</span>
+  </div>
+  {% if talk.description %}
+  <div class="talk-desc">{{ talk.description }}</div>
+  {% endif %}
+  <div class="talk-venue">{{ talk.event }}{%- if talk.location %}, {{ talk.location }}{%- endif %}</div>
+  {% if talk.links and talk.links.size > 0 %}
+  <div class="talk-links">
+    {%- for link in talk.links -%}
+      {%- if forloop.index > 1 %}<span class="talk-links-separator">·</span>{%- endif %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+{% if conference.size > 0 %}
+<div class="talks-section-header">
+  <span class="talks-section-icon"><i class="fas fa-presentation-screen"></i></span>
+  Conference Talks
+</div>
+
+{% for talk in conference %}
+<div class="talk-card">
+  <div class="talk-card-top">
+    <div class="talk-title-row">
+      <span class="talk-title">"{{ talk.title }}"</span>
+      <span class="talk-badge">
+        {%- if talk.badge -%}
+          {{ talk.badge }}
+        {%- else -%}
+          Conference Talk
+        {%- endif -%}
+      </span>
+    </div>
+    <span class="talk-date">{{ talk.date }}</span>
+  </div>
+  {% if talk.description %}
+  <div class="talk-desc">{{ talk.description }}</div>
+  {% endif %}
+  <div class="talk-venue">{{ talk.event }}{%- if talk.location %}, {{ talk.location }}{%- endif %}</div>
+  {% if talk.links and talk.links.size > 0 %}
+  <div class="talk-links">
+    {%- for link in talk.links -%}
+      {%- if forloop.index > 1 %}<span class="talk-links-separator">·</span>{%- endif %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
 {% endfor %}
+{% endif %}
+
+{% if media_outreach.size > 0 %}
+<div class="talks-section-header">
+  <span class="talks-section-icon"><i class="fas fa-podcast"></i></span>
+  Media & Outreach
+</div>
+
+{% for talk in media_outreach %}
+<div class="talk-card">
+  <div class="talk-card-top">
+    <div class="talk-title-row">
+      <span class="talk-title">"{{ talk.title }}"</span>
+      <span class="talk-badge">
+        {%- if talk.badge -%}
+          {{ talk.badge }}
+        {%- elsif talk.type == 'media' -%}
+          Podcast
+        {%- elsif talk.type == 'outreach' -%}
+          Science Communication
+        {%- endif -%}
+      </span>
+    </div>
+    <span class="talk-date">{{ talk.date }}</span>
+  </div>
+  {% if talk.description %}
+  <div class="talk-desc">{{ talk.description }}</div>
+  {% endif %}
+  <div class="talk-venue">{{ talk.event }}{%- if talk.location %}, {{ talk.location }}{%- endif %}</div>
+  {% if talk.links and talk.links.size > 0 %}
+  <div class="talk-links">
+    {%- for link in talk.links -%}
+      {%- if forloop.index > 1 %}<span class="talk-links-separator">·</span>{%- endif %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
