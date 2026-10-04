@@ -2,6 +2,34 @@
 # Type options: keynote | invited | conference | media | outreach
 # Badge text is auto-generated from type, or use optional 'badge' field to override
 
+- type: invited
+  title: "What It Means to Be Human in Virtual Worlds? Towards Understanding Immersion, Safety and Responsibility"
+  event: "DIGIPHY Project Workshop, Faculty of Electrical Engineering and Computing (FER), University of Zagreb"
+  location: "Zagreb, Croatia"
+  date: "June 2026"
+  links:
+    - label: Workshop report
+      url: https://muexlab.fer.hr/muexlab
+  sort_date: 202606
+
+- type: invited
+  badge: Panel
+  title: "Break the Pattern: Tech Beyond the Default in the AI Era"
+  event: "International Women's Day 2026, Women Techmakers Berlin"
+  location: "Berlin, Germany"
+  date: "March 2026"
+  description: "Panel discussion on human-centred design and inclusive technology."
+  sort_date: 202603
+
+- type: invited
+  badge: Invited Talk
+  title: "From UX Design to XR Research in the Age of AI"
+  event: "\"Meet Your Mentor\" Online Session, AI Grid"
+  location: "Online"
+  date: "September 2025"
+  description: "Short talk on my career path and research, followed by mentoring breakout sessions with AI Grid members."
+  sort_date: 202509
+
 - title: "Bridging Real and Virtual: Understanding How Influencing Factors Shape XR Experiences"
   type: keynote
   event: "Workshop on Realistic and Virtual Social Interactions (ReViSI), IEEE VR 2025"
@@ -9,7 +37,7 @@
   date: "March 2025"
   sort_date: 202503
 
-- title: "Women in VR: Research in academia and the question of emotions"
+- title: "Women in VR: Research in Academia and the Question of Emotions"
   type: media
   badge: "Podcast"
   event: "VR Women Podcast"
