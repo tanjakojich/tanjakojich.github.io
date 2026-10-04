@@ -93,33 +93,6 @@ redirect_from:
     display: inline;
   }
 
-  .cv-embed-container {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 2em;
-    background: #f9f9f9;
-  }
-
-  .cv-embed-wrapper {
-    width: 100%;
-    height: 85vh;
-  }
-
-  .cv-embed-wrapper object,
-  .cv-embed-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  .cv-no-preview {
-    padding: 2em;
-    text-align: center;
-    color: #888;
-    font-size: 0.9em;
-  }
-
   @media (max-width: 768px) {
     .cv-download-card {
       flex-direction: column;
@@ -137,9 +110,7 @@ redirect_from:
       justify-content: center;
     }
 
-    .cv-embed-container {
-      display: none;
-    }
+
   }
 
   @media (max-width: 600px) {
@@ -175,20 +146,4 @@ redirect_from:
   </div>
 </div>
 
-{% if site.static_files %}
-  {% assign cv_exists = false %}
-  {% for file in site.static_files %}
-    {% if file.path == '/files/Tanja_Kojic_CV.pdf' %}
-      {% assign cv_exists = true %}
-    {% endif %}
-  {% endfor %}
-  {% if cv_exists %}
-  <div class="cv-embed-container">
-    <div class="cv-embed-wrapper">
-      <object data="{{ cv_file }}" type="application/pdf">
-        <iframe src="{{ cv_file }}" width="100%" height="100%"></iframe>
-      </object>
-    </div>
-  </div>
-  {% endif %}
-{% endif %}
+
