@@ -11,8 +11,8 @@ locale                   : "en-US"
 site_theme               : "default"
 title                    : "Research Profile"
 title_separator          : "-"
-name                     : &name "Dr. Tanja Kojić"
-description              : &description "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
+name                     : "Dr. Tanja Kojić"
+description              : "Researcher in Immersive Media Experiences, User Experience, and Multimedia Quality"
 url                      : "https://tanjakojich.github.io" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 #repository               : "academicpages/academicpages.github.io"
@@ -152,7 +152,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : 
 facebook:
   username               :
   app_id                 :
