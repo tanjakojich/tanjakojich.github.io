@@ -1,4 +1,4 @@
-{% include base_path %}
+{% if site.url %}{% assign base_path = site.url | append: site.baseurl %}{% else %}{% assign base_path = site.github.url %}{% endif %}
 
 <!-- begin SEO -->
 {% if site.url %}
@@ -137,3 +137,5 @@
   <meta name="yandex-verification" content="{{ site.yandex_site_verification }}">
 {% endif %}
 <!-- end SEO -->
+
+{% include base_path %}

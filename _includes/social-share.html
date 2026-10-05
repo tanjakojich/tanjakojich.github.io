@@ -1,4 +1,4 @@
-{% include base_path %}
+{% if site.url %}{% assign base_path = site.url | append: site.baseurl %}{% else %}{% assign base_path = site.github.url %}{% endif %}
 
 <section class="page__share">
   {% if site.data.ui-text[site.locale].share_on_label %}
@@ -11,3 +11,5 @@
 
   <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ base_path }}{{ page.url }}" class="btn btn--linkedin" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
+
+{% include base_path %}

@@ -1,5 +1,6 @@
-{% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
-{% else %}
-  {% assign base_path = site.github.url %}
-{% endif %}
+{% comment %}
+  Relative base for internal links and assets, so the site works on any host
+  (localhost, 127.0.0.1, the live domain) without switching origins.
+  Includes that need a full URL (SEO tags, sharing, comments) build their own
+  absolute base from site.url instead.
+{% endcomment %}{% assign base_path = site.baseurl %}

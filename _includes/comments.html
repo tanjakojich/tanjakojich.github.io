@@ -1,4 +1,4 @@
-{% include base_path %}
+{% if site.url %}{% assign base_path = site.url | append: site.baseurl %}{% else %}{% assign base_path = site.github.url %}{% endif %}
 
 <div class="page__comments">
   {% capture comments_label %}{{ site.data.ui-text[site.locale].comments_label | default: "Comments" }}{% endcapture %}
@@ -81,3 +81,4 @@
     {% include /comments-providers/scripts.html %}
   {% endcase %}
 </div>
+{% include base_path %}
