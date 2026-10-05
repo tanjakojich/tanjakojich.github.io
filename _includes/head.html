@@ -13,7 +13,8 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-  // Apply a saved theme choice before the stylesheet loads, so the page never flashes the wrong theme
+  /* Apply a saved theme choice before the stylesheet loads, so the page never flashes the wrong theme.
+     Use block comments only: GitHub Pages compresses this HTML onto one line. */
   (function () {
     try {
       var theme = localStorage.getItem('theme');

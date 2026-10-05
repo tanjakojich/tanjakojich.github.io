@@ -554,7 +554,7 @@ author_profile: true
   const navLinks = Array.from(document.querySelectorAll('.pub-category-nav a'));
   const sectionIds = navLinks.map(a => a.getAttribute('href').replace('#', ''));
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
-  const OFFSET = 64 + 60; // masthead + sticky nav height
+  const OFFSET = 64 + 60; /* masthead + sticky nav height */
   let activated = false;
 
   function setActive() {
