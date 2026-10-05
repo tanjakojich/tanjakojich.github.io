@@ -255,8 +255,8 @@ figcaption {
     transition: $global-transition;
 
     &:hover {
-      color: #000;
-      border-bottom-color: #000;
+      color: var(--text);
+      border-bottom-color: var(--text);
     }
   }
 }
@@ -316,23 +316,15 @@ nav {
    ANIMATIONS
    ========================================================================== */
 
-   @-webkit-keyframes intro {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+/* Opacity only: a transform on #main would break the fixed sidebar */
+@keyframes intro {
+  0% {
+    opacity: 0;
   }
-  
-  @keyframes intro {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
+}
 
 /* Global animation transition */
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {

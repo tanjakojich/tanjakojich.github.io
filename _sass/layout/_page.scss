@@ -8,8 +8,8 @@
   margin-top: 2em;
   padding-left: 1em;
   padding-right: 1em;
-  animation: intro 0.3s both;
-  animation-delay: 0.35s;
+  animation: intro 0.5s $ease-out both;
+  animation-delay: 0.05s;
 
   @include breakpoint($x-large) {
     max-width: $x-large;
@@ -36,7 +36,10 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.15;
+  font-size: unquote("clamp(1.5rem, 1.2rem + 1vw, 1.875rem)");
+  letter-spacing: -0.01em;
+  color: var(--text);
 
   & + .page__meta {
     margin-top: -0.5em;

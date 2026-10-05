@@ -2,58 +2,353 @@
    MASTHEAD
    ========================================================================== */
 
+:root {
+  --masthead-offset: #{$masthead-height};
+}
+
+:root.is-scrolled {
+  --masthead-offset: #{$masthead-height-scrolled};
+}
+
 .masthead {
   position: fixed;
-  background: var(--global-bg-color);
-  border-bottom: 1px solid var(--global-border-color);
-  height: $masthead-height;
   top: 0;
-  width: 100%;
-
-  -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  left: 0;
+  right: 0;
   z-index: 20;
+  height: $masthead-height;
+  background-color: var(--bg);
+  border-bottom: 1px solid transparent;
+  transition: height 0.3s $ease-out, background-color 0.3s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease;
+
+  .is-scrolled & {
+    height: $masthead-height-scrolled;
+    background-color: var(--bg-translucent);
+    border-bottom-color: var(--border);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+            backdrop-filter: saturate(180%) blur(12px);
+  }
+
+  /* While the mobile menu is open, the header blends into the overlay */
+  .menu-open & {
+    background-color: var(--bg);
+    border-bottom-color: transparent;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
 
   &__inner-wrap {
     @include container;
-    @include clearfix;
-    padding: 1em 1em 1em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    padding: 0 1em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
     }
+  }
 
-    nav {
-      z-index: 10;
+  &__brand {
+    margin-right: auto;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 4px;
+
+    &:hover,
+    &:visited {
+      color: var(--text);
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include breakpoint($medium) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__menu-item {
+    margin: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+
+    /* Underline that slides in on hover */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.75rem;
+      right: 0.75rem;
+      bottom: 0.25rem;
+      height: 1.5px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s $ease-out;
+    }
+
+    &:visited {
+      color: var(--text-muted);
+    }
+
+    &:hover,
+    &[aria-current="page"] {
+      color: var(--text);
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+}
+
+/* Visible focus rings for keyboard users */
+.masthead a:focus-visible,
+.masthead button:focus-visible,
+.mobile-menu a:focus-visible,
+.mobile-menu button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/*
+   Theme toggle (sun / moon)
+   ========================================================================== */
+
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: var(--surface-muted);
+    color: var(--text);
+  }
+
+  &__icon {
+    position: absolute;
+    font-size: 1rem;
+    transition: opacity 0.3s ease, transform 0.4s $ease-out;
+  }
+
+  /* Light theme shows the moon (switch to dark), dark theme shows the sun */
+  &__icon--sun {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.6);
+  }
+
+  &[aria-pressed="true"] {
+    .theme-toggle__icon--moon {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.6);
+    }
+
+    .theme-toggle__icon--sun {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/*
+   Hamburger button (mobile only)
+   ========================================================================== */
+
+.nav-toggle {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin-right: -0.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+
+  @include breakpoint($medium) {
+    display: none;
+  }
+
+  &__bar {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    border-radius: 1px;
+    background-color: currentColor;
+    transition: transform 0.3s $ease-out, opacity 0.2s ease;
+  }
+
+  /* Morph into an X */
+  &[aria-expanded="true"] {
+    .nav-toggle__bar:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .nav-toggle__bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle__bar:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+  }
+}
+
+/*
+   Full-screen mobile menu
+   ========================================================================== */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+  display: flex;
+  flex-direction: column;
+  padding: calc(#{$masthead-height} + 1.5rem) 16px 2rem;
+  overflow-y: auto;
+  background-color: var(--bg);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  @include breakpoint($medium) {
+    display: none;
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+      border-bottom: 1px solid var(--border);
     }
 
     a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.75rem 0;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-muted);
       text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:visited {
+        color: var(--text-muted);
+      }
+
+      &:hover,
+      &[aria-current="page"] {
+        color: var(--text);
+      }
     }
   }
-}
 
-.masthead__menu {
-
-  ul {
-    margin: 0;
-    padding: 0;
-    clear: both;
-    list-style-type: none;
+  &__theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+    margin-top: auto;
+    padding: 1rem 0 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
   }
 }
 
-.masthead__menu-item {
-  background-color: var(--global-bg-color);
-  display: block;
-  list-style-type: none;
-  white-space: nowrap;
+/* Small on/off switch used by the mobile theme toggle */
+.switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: var(--border-strong);
+  transition: background-color 0.25s ease;
 
-  &--lg {
-    padding-right: 2em;
-    font-weight: 700;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s $ease-out;
+  }
+
+  [aria-pressed="true"] > & {
+    background-color: var(--accent);
+
+    &::after {
+      transform: translateX(20px);
+    }
   }
 }

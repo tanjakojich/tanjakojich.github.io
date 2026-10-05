@@ -13,6 +13,13 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  // Apply a saved theme choice before the stylesheet loads, so the page never flashes the wrong theme
+  (function () {
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
 </script>
 
 <!-- Google Fonts -->

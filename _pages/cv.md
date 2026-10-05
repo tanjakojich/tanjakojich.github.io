@@ -12,7 +12,7 @@ redirect_from:
 <style>
   .cv-hero-desc {
     text-align: left;
-    color: #555;
+    color: var(--text-muted);
     font-size: 0.88em;
     margin-top: 0;
     margin-bottom: 1.5em;
@@ -22,11 +22,11 @@ redirect_from:
   }
 
   .cv-download-card {
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.5em;
     margin-bottom: 2em;
-    background: #fff;
+    background: var(--surface);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,12 +43,12 @@ redirect_from:
   .cv-card-title {
     font-weight: 600;
     font-size: 1.05em;
-    color: #1a1a2e;
+    color: var(--text);
   }
 
   .cv-card-meta {
     font-size: 0.82em;
-    color: #888;
+    color: var(--text-subtle);
   }
 
   .cv-card-right {
@@ -63,11 +63,11 @@ redirect_from:
     align-items: center;
     gap: 0.5em;
     padding: 0.6em 1.2em;
-    background: #f0f0f0;
-    color: #1a1a2e;
+    background: var(--surface-muted);
+    color: var(--text);
     text-decoration: none;
     border-radius: 4px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border);
     font-size: 0.9em;
     font-weight: 500;
     cursor: pointer;
@@ -76,8 +76,8 @@ redirect_from:
   }
 
   .cv-download-btn:hover {
-    background: #e8e8e8;
-    border-color: #d0d0d0;
+    background: var(--border);
+    border-color: var(--border-strong);
     text-decoration: underline;
   }
 

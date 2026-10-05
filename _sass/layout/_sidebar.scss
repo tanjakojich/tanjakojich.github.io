@@ -76,61 +76,86 @@
    Author profile and links
    ========================================================================== */
 
-.author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
-
-  @include breakpoint($large) {
-    display: block;
-    width: auto;
-    height: auto;
+/* Mobile and tablet: a compact, centred profile card above the content */
+.sidebar {
+  @include breakpoint(max-width $large - 1px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0.5rem 0 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
   }
+}
 
+.author__profile {
+  @include breakpoint(max-width $large - 1px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.author__avatar {
   img {
-    max-width: 175px;
+    display: block;
+    width: 96px;
+    height: 96px;
+    max-width: none;
+    object-fit: cover;
     border-radius: 50%;
 
     @include breakpoint($large) {
+      width: 100%;
+      height: auto;
+      max-width: 175px;
       padding: 5px;
       border: 1px solid var(--global-border-color);
     }
   }
 }
 
+.sidebar .author__avatar img {
+  @include breakpoint(max-width $large - 1px) {
+    width: 96px;
+  }
+}
+
 .author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
-  line-height: 1;
+  margin-top: 0.75rem;
+  line-height: 1.2;
 
   @include breakpoint($large) {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    margin-top: 0;
   }
 }
 
 .author__name {
   margin: 0;
+  color: var(--text);
 
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
+
 .sidebar .author__name {
   font-family: $sans-serif;
-  font-size: $type-size-5;
+  font-size: $type-size-4;
+
+  @include breakpoint($large) {
+    font-size: $type-size-5;
+  }
 }
 
+/* Research interests: desktop sidebar only */
 .sidebar .author__desktop {
   display: none;
-  @media screen and (min-width: 1024px) {
+
+  @include breakpoint($large) {
     display: block;
   }
 }
@@ -154,107 +179,138 @@
 }
 
 .author__urls-wrapper {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
+  margin-top: 0.5rem;
   font-family: $sans-serif;
-  z-index: 10;
-  position: relative;
-  cursor: pointer;
-
-  li:last-child {
-    a {
-      margin-bottom: 0;
-    }
-  }
 
   @include breakpoint($large) {
-    display: block;
-  }
-
-  button {
-    margin-bottom: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
+    margin-top: 0;
   }
 }
 
 .author__urls {
-  display: none;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 10px;
-  list-style-type: none;
-  border: 1px solid var(--global-border-color);
-  border-radius: $border-radius;
-  background: #fff;
-  z-index: -1;
-  box-shadow: 0 0 10px rgba(#000, 0.25);
-  cursor: default;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   @include breakpoint($large) {
     display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: var(--global-border-color) transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: calc(50% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: #fff transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
   }
 
   li {
+    margin: 0;
     white-space: nowrap;
   }
 
   a {
-    display: block;
-    margin-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    color: inherit;
-    font-size: $type-size-5;
+    color: var(--text-muted);
     text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
 
     &:hover {
-      text-decoration: underline;
+      color: var(--text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
   }
+
+  /* Mobile: icon-only round buttons, labels kept for screen readers */
+  @include breakpoint(max-width $large - 1px) {
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.15rem;
+
+      &:hover {
+        background-color: var(--surface-muted);
+      }
+    }
+
+    .icon-pad-right {
+      margin-right: 0;
+    }
+
+    .author__link-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+
+  /* Desktop: the original vertical list with labels */
+  @include breakpoint($large) {
+    a {
+      display: block;
+      margin-bottom: 5px;
+      padding: 2px 5px 2px 0;
+      font-size: $type-size-5;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.author__meta {
+  margin: 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+
+  @include breakpoint($large) {
+    margin: 0 0 5px;
+    padding: 2px 0;
+    font-size: inherit;
+  }
+}
+
+/* Forces the icon row onto its own line in the mobile card */
+.author__break {
+  flex-basis: 100%;
+  height: 0.25rem;
+
+  @include breakpoint($large) {
+    display: none;
+  }
+}
+
+.author__interests-title {
+  margin: 0.8em 0 0.3em !important;
+}
+
+.author__interests {
+  margin-bottom: 0.8em !important;
+}
+
+.author__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.author__chip {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: normal;
+  color: var(--text-secondary);
+  background-color: var(--surface-muted);
 }

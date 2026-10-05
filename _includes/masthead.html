@@ -1,23 +1,49 @@
 {% include base_path %}
 
-<div class="masthead">
+<header class="masthead" id="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
+    <a class="masthead__brand" href="{{ base_path }}/">{{ site.name | default: site.title }}</a>
+
+    <nav class="masthead__nav" aria-label="Main">
+      <ul class="masthead__menu">
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
+          {% assign link_len = link.url | size %}{% assign url_prefix = page.url | slice: 0, link_len %}
+          <li class="masthead__menu-item">
+            <a class="masthead__link" href="{{ domain }}{{ link.url }}"{% if url_prefix == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="masthead__actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Dark mode" title="Toggle dark mode">
+        <i class="fa-solid fa-moon theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"></i>
+      </button>
+      <button class="nav-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-label="Main menu" inert>
+  <nav>
+    <ul class="mobile-menu__links">
+      {% for link in site.data.navigation.main %}
+        {% if link.url contains 'http' %}{% assign domain = '' %}{% else %}{% assign domain = base_path %}{% endif %}
+        {% assign link_len = link.url | size %}{% assign url_prefix = page.url | slice: 0, link_len %}
+        <li style="--i: {{ forloop.index0 }}">
+          <a href="{{ domain }}{{ link.url }}"{% if url_prefix == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <button class="mobile-menu__theme" type="button" data-theme-toggle aria-pressed="false" style="--i: {{ site.data.navigation.main | size }}">
+    <span>Dark mode</span>
+    <span class="switch" aria-hidden="true"></span>
+  </button>
 </div>

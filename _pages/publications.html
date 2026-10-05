@@ -4,7 +4,7 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-<p style="color:#555; font-size:0.88em;">A full list of my publications can be found on my <a href="https://scholar.google.com/citations?user=ESR3SoUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" style="color:#111;">Google Scholar profile</a>.</p>
+<p style="color:var(--text-muted); font-size:0.88em;">A full list of my publications can be found on my <a href="https://scholar.google.com/citations?user=ESR3SoUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" style="color:var(--text);">Google Scholar profile</a>.</p>
 
 <nav class="pub-category-nav" aria-label="Publication categories">
   <a href="#xr">Immersive Systems &amp; Extended Reality</a>
@@ -22,9 +22,10 @@ author_profile: true
     row-gap: 0;
     margin: 1.5rem 0 0.5rem 0;
     position: sticky;
-    top: 70px;
+    top: var(--masthead-offset, 64px);
     z-index: 10;
-    background: var(--global-bg-color, #fff);
+    background: var(--bg);
+    transition: top 0.3s ease;
     padding: 0.5rem 0;
     width: 100%;
   }
@@ -35,25 +36,25 @@ author_profile: true
   .pub-category-nav a {
     display: inline-block;
     padding: 0.25rem 0.7rem;
-    border: 1px solid #d0d0d0;
+    border: 1px solid var(--border-strong);
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #111 !important;
+    color: var(--text) !important;
     text-decoration: none !important;
-    background: #fff;
+    background: var(--surface);
     transition: background 0.2s, border-color 0.2s, transform 0.15s;
   }
   .pub-category-nav a:hover {
-    background: #111;
-    color: #fff !important;
-    border-color: #111;
+    background: var(--inverse-bg);
+    color: var(--inverse-text) !important;
+    border-color: var(--inverse-bg);
     transform: translateY(-1px);
   }
   .pub-category-nav a.active {
-    background: #111;
-    color: #fff !important;
-    border-color: #111;
+    background: var(--inverse-bg);
+    color: var(--inverse-text) !important;
+    border-color: var(--inverse-bg);
   }
 </style>
 
@@ -67,8 +68,8 @@ author_profile: true
     margin-bottom: 1.25em;
   }
   .pub-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1em 1.25em;
     margin-bottom: 0.75em;
@@ -83,24 +84,24 @@ author_profile: true
   .pub-title {
     font-size: 1em;
     font-weight: 700;
-    color: #111;
+    color: var(--text);
     margin: 0 0 0.25em 0;
   }
   .pub-authors {
     font-size: 0.88em;
-    color: #555;
+    color: var(--text-muted);
     margin: 0 0 0.2em 0;
   }
   .pub-meta {
     font-size: 0.85em;
-    color: #555;
+    color: var(--text-muted);
     font-style: italic;
     margin: 0;
   }
   .pub-meta a {
     font-style: normal;
     font-weight: 600;
-    color: #3b82f6;
+    color: var(--accent);
     text-decoration: none;
   }
   .pub-meta a:hover { text-decoration: underline; }
@@ -114,10 +115,10 @@ author_profile: true
     flex-shrink: 0;
     margin-top: 0.15em;
   }
-  .badge-journal    { background: #e8eeff; color: #3b5bdb; }
-  .badge-conference { background: #e6faf0; color: #2f9e5e; }
-  .badge-workshop   { background: #f3e8ff; color: #7c3aed; }
-  .badge-preprint   { background: #fff3e0; color: #e65100; }
+  .badge-journal    { background: var(--badge-journal-bg);    color: var(--badge-journal-text); }
+  .badge-conference { background: var(--badge-conference-bg); color: var(--badge-conference-text); }
+  .badge-workshop   { background: var(--badge-workshop-bg);   color: var(--badge-workshop-text); }
+  .badge-preprint   { background: var(--badge-preprint-bg);   color: var(--badge-preprint-text); }
 </style>
 
 <!-- ═══════════════════════════════════════════
@@ -553,7 +554,7 @@ author_profile: true
   const navLinks = Array.from(document.querySelectorAll('.pub-category-nav a'));
   const sectionIds = navLinks.map(a => a.getAttribute('href').replace('#', ''));
   const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
-  const OFFSET = 70 + 60; // masthead + sticky nav height
+  const OFFSET = 64 + 60; // masthead + sticky nav height
   let activated = false;
 
   function setActive() {

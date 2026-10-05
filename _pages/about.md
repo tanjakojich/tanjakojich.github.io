@@ -68,65 +68,14 @@ Promoting inclusive, transparent, and participant-aware methodologies in digital
 </div>
 -->
 
-<style>
-  .hero-btn-primary,
-  .hero-btn-primary:hover,
-  .hero-btn-primary:focus,
-  .hero-btn-primary:active,
-  .hero-btn-primary:visited {
-    display: inline-block;
-    padding: 0.5rem 1.25rem;
-    background-color: #000000;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    border-bottom: none !important;
-  }
+<div class="home-hero">
+  <h2 class="home-hero__eyebrow">SENIOR SCIENTIST & UX RESEARCHER</h2>
   
-  .hero-btn-primary:hover {
-    background-color: #000000;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .hero-btn-secondary,
-  .hero-btn-secondary:hover,
-  .hero-btn-secondary:focus,
-  .hero-btn-secondary:active,
-  .hero-btn-secondary:visited {
-    display: inline-block;
-    padding: 0.5rem 1.25rem;
-    background-color: #ffffff;
-    color: #000000 !important;
-    text-decoration: none !important;
-    border-radius: 4px;
-    font-weight: 500;
-    border: 1px solid #cccccc;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid #cccccc !important;
-  }
-  
-  .hero-btn-secondary:hover {
-    background-color: #f8f8f8;
-    border-color: #000000;
-    border-bottom: 1px solid #000000 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-</style>
-
-<div style="margin: 0; padding: 0 0 3rem 0;">
-  <h2 style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #333333; margin-bottom: 1.25rem;">SENIOR SCIENTIST & UX RESEARCHER</h2>
-  
-  <p style="font-size: 1.05em; line-height: 1.7; color: #000000; margin-bottom: 2rem; font-weight: 400;">
+  <p class="home-hero__lead">
     My work connects academic research with real human experience. Focused on making technology work in the real world. 
   </p>
   
-  <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+  <div class="home-hero__actions">
     <a href="/publications/" class="hero-btn-primary">View Research</a>
     <a href="/portfolio/" class="hero-btn-secondary">UX Portfolio</a>
   </div>
@@ -159,22 +108,24 @@ Studying how immersive and interactive technologies are experienced, adopted, an
 
 ## Recent Work
 
-<div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; margin-bottom: 3rem;">
+<div class="home-cards">
 
-<div style="flex: 1; min-width: 300px; border: 1px solid #e8e8e8; border-radius: 8px; padding: 2rem; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-  <div style="margin-bottom: 1rem; display: flex; align-items: center;">
-    <i class="fas fa-file-alt" style="font-size: 1.2rem; margin-right: 0.5rem; color: #666;"></i>
-    <span style="font-weight: 400; color: #666; font-size: 0.875rem;">Latest Publication</span>
+<div class="home-card" data-reveal>
+  <div class="home-card__label">
+    <i class="fas fa-file-alt" aria-hidden="true"></i>
+    <span>Latest Publication</span>
   </div>
-  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4;"><a href="https://dl.acm.org/doi/full/10.1145/3756884.3766019" target="_blank" style="color: #1a1a1a; text-decoration: none; transition: text-decoration 0.2s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Investigating the Effect of Prior Exposure and Fidelity on Quality and Realism...</a></h3>
-  <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">A study showed that what users have seen before and how detailed the virtual environment looks strongly affect how real and high-quality the VR twin feels.</p>
+  <h3 class="home-card__title"><a href="https://dl.acm.org/doi/full/10.1145/3756884.3766019" target="_blank" rel="noopener">Investigating the Effect of Prior Exposure and Fidelity on Quality and Realism...</a></h3>
+  <p class="home-card__text">A study showed that what users have seen before and how detailed the virtual environment looks strongly affect how real and high-quality the VR twin feels.</p>
 </div>
 
-<div style="flex: 1; min-width: 300px; border: 1px solid #e8e8e8; border-radius: 8px; padding: 2rem; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-  <div style="margin-bottom: 1rem; display: flex; align-items: center;">
-    <i class="fas fa-briefcase" style="font-size: 1.2rem; margin-right: 0.5rem; color: #666;"></i>
-    <span style="font-weight: 400; color: #666; font-size: 0.875rem;">Recent Project</span>
+<div class="home-card" data-reveal>
+  <div class="home-card__label">
+    <i class="fas fa-briefcase" aria-hidden="true"></i>
+    <span>Recent Project</span>
   </div>
-  <h3 style="margin: 0 0 0.75rem 0; font-size: 1.125rem; font-weight: 600; line-height: 1.4;"><a href="https://didymos-xr.eu/" target="_blank" style="color: #1a1a1a; text-decoration: none; transition: text-decoration 0.2s ease;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">DIDYMOS-XR Project</a></h3>
-  <p style="color: #666; font-size: 0.9375rem; line-height: 1.6; margin: 0;">Advancing real-time digital twins by combining multi-sensor data and AI to create immersive XR experiences that closely mirror and interact with the physical world.</p>
+  <h3 class="home-card__title"><a href="https://didymos-xr.eu/" target="_blank" rel="noopener">DIDYMOS-XR Project</a></h3>
+  <p class="home-card__text">Advancing real-time digital twins by combining multi-sensor data and AI to create immersive XR experiences that closely mirror and interact with the physical world.</p>
+</div>
+
 </div>
