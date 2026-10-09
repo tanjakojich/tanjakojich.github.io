@@ -23,10 +23,9 @@
   })();
 </script>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Self-hosted fonts: start the two most-used files early -->
+<link rel="preload" href="{{ base_path }}/assets/fonts/raleway-normal-500700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ base_path }}/assets/fonts/lora-normal-400600-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">

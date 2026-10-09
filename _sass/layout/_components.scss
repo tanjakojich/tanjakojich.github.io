@@ -1,0 +1,206 @@
+/* ==========================================================================
+   SHARED COMPONENTS
+   Building blocks of the redesign (frosted cards, mono labels, pill buttons,
+   the 12-column card grid and the hero backdrop). Colours come from the
+   tokens in theme/_default.scss, so everything follows light and dark mode.
+   ========================================================================== */
+
+:root {
+  --font-display : #{$display-font};
+  --font-body    : #{$body-font};
+  --font-mono    : #{$mono-font};
+  --radius-card  : 24px;
+  --radius-pill  : 999px;
+}
+
+/* Small uppercase label above a card title ("Latest paper", "Contact") */
+.label-mono {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+
+  &--lavender { color: var(--lavender); }
+  &--stone    { color: var(--stone); }
+}
+
+/* Frosted card */
+.glass-card {
+  position: relative;
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius-card);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--text);
+
+  /* Tinted variants: a soft wash of the accent colours over the glass */
+  &--lavender {
+    background: linear-gradient(160deg, var(--tint-lavender), var(--tint-blue)), var(--glass);
+  }
+
+  &--contact {
+    background:
+      radial-gradient(120% 90% at 100% 0%, var(--tint-lavender), transparent 60%),
+      radial-gradient(90% 80% at 0% 100%, var(--tint-stone), transparent 60%),
+      var(--glass);
+  }
+
+  &--flush { padding: 0; overflow: hidden; }
+}
+
+/* Pill buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 46px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.25s $ease-out, box-shadow 0.25s $ease-out, background-color 0.2s ease;
+
+  &:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  &:active { transform: none; }
+
+  &--primary,
+  &--primary:visited {
+    background: var(--inverse-bg);
+    color: var(--inverse-text) !important;
+  }
+
+  &--glass,
+  &--glass:visited {
+    border-color: var(--glass-line);
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    color: var(--text) !important;
+  }
+
+  &--small { min-height: 38px; padding: 0 14px; font-size: 0.8125rem; }
+}
+
+/* Small rounded tag ("arXiv 2026", "Preprint") */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius-pill);
+  background: var(--tint-stone);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* 12-column card grid; every child stacks full width on narrow screens */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 18px;
+
+  > * { grid-column: 1 / -1; }
+
+  @include breakpoint($medium-wide) {
+    > .span-4  { grid-column: span 4; }
+    > .span-6  { grid-column: span 6; }
+    > .span-8  { grid-column: span 8; }
+    > .span-12 { grid-column: span 12; }
+  }
+}
+
+/* Hero backdrop: three soft glows plus a perspective grid that drifts */
+.hero-backdrop {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(55% 70% at 82% 35%, var(--glow-lavender), transparent 70%),
+    radial-gradient(45% 60% at 12% 15%, var(--glow-blue), transparent 70%),
+    radial-gradient(50% 45% at 40% 100%, var(--glow-stone), transparent 70%);
+
+  &__floor {
+    position: absolute;
+    left: -20%;
+    right: -20%;
+    bottom: -40px;
+    height: 300px;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    transform: perspective(520px) rotateX(62deg);
+    transform-origin: center bottom;
+    -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+    mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+    pointer-events: none;
+  }
+
+  > :not(.hero-backdrop__floor) { position: relative; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-backdrop__floor { animation: floor-drift 9s linear infinite; }
+
+  @keyframes floor-drift {
+    from { background-position: 0 0; }
+    to   { background-position: 0 56px; }
+  }
+}
+
+/* Circular portrait with a solid blue ring and a dashed lavender ring */
+.portrait-rings {
+  position: relative;
+  width: 260px;
+  max-width: 100%;
+  aspect-ratio: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::before { inset: -14px; border: 1px solid var(--blue); opacity: 0.5; }
+  &::after  { inset: -34px; border: 1px dashed var(--lavender); opacity: 0.45; }
+}
+
+/* Soft two-colour placeholder where a project image will go */
+.media-placeholder {
+  display: flex;
+  align-items: flex-end;
+  height: 140px;
+  padding: 12px 16px;
+  background:
+    radial-gradient(circle at 30% 40%, var(--media-blue), transparent 55%),
+    radial-gradient(circle at 75% 70%, var(--media-lavender), transparent 55%),
+    var(--media);
+}
+
+/* Visible keyboard focus everywhere */
+a:focus-visible,
+button:focus-visible,
+.btn-pill:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}

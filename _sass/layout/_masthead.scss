@@ -54,9 +54,10 @@
 
   &__brand {
     margin-right: auto;
-    font-size: 1.05rem;
+    font-family: $display-font;
+    font-size: 1.125rem;
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
     color: var(--text);
     text-decoration: none;
     white-space: nowrap;

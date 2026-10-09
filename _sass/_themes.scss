@@ -13,10 +13,16 @@ $doc-font-size              : 16;
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
+/* Site typefaces (self-hosted, see layout/_fonts.scss):
+   Raleway for headings and the name, Lora for reading text, DM Mono for labels */
+$display-font               : "Raleway", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$body-font                  : "Lora", Georgia, "Times New Roman", serif;
+$mono-font                  : "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+
 /* System typefaces */
-$serif                      : Georgia, Times, serif;
-$sans-serif                 : 'Raleway', -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace                  : Monaco, Consolas, "Lucida Console", monospace;
+$serif                      : $body-font;
+$sans-serif                 : $body-font;
+$monospace                  : $mono-font;
 
 /* Sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
@@ -39,9 +45,9 @@ $type-size-6                : 0.75em;   // ~12px
 $type-size-7                : 0.6875em; // ~11px
 $type-size-8                : 0.625em;  // ~10px
 
-$global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif;
-$caption-font-family        : $serif;
+$global-font-family         : $body-font;
+$header-font-family         : $display-font;
+$caption-font-family        : $body-font;
 
 /* ==========================================================================
    Breakpoints
