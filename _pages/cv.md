@@ -1,6 +1,7 @@
 ---
 layout: archive
 title: "CV"
+description: "Curriculum vitae of Dr. Tanja Kojić, Senior Scientist at the Quality and Usability Lab, TU Berlin."
 permalink: /cv/
 author_profile: true
 redirect_from:
