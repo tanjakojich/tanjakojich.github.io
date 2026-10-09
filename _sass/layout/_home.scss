@@ -52,7 +52,7 @@
     color: var(--text);
   }
 
-  &__accent { color: var(--lavender); }
+  &__accent { color: var(--burgundy); }
 
   &__lead {
     max-width: 58ch;
@@ -162,7 +162,7 @@
   &__link {
     margin-top: auto;
     font-size: 0.875rem;
-    color: var(--lavender) !important;
+    color: var(--burgundy) !important;
   }
 }
 
@@ -182,8 +182,8 @@
     padding-top: 18px;
     border-top: 1px solid var(--blue);
 
-    &--sky   { border-top-color: var(--blue-soft); }
-    &--stone { border-top-color: var(--stone); }
+    &--burgundy { border-top-color: var(--burgundy); }
+    &--stone    { border-top-color: var(--stone); }
 
     p {
       margin: 10px 0 0;

@@ -28,14 +28,15 @@ $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
 
-/* Design tokens: the "blue, lavender & stone" palette.
-   Blue is the primary accent (labels, links) and, with a lighter sky blue,
-   colours every tinted surface; stone is the calm neutral. Lavender is a
-   text-only highlight and never used as a background. Every colour on the site should come from these
+/* Design tokens: the "blue & burgundy" palette.
+   Blue is the primary accent (labels, links) and tints most surfaces.
+   Burgundy is the highlight: text, thin lines, and the soft washes in the
+   home hero and contact card. Stone is a quiet neutral for chips and the
+   "In numbers" card. Every colour on the site should come from these
    variables so that the light and dark themes stay in sync. */
 @mixin theme-light {
-    --bg                    : #f8f8f6;
-    --bg-translucent        : rgba(248, 248, 246, 0.8);
+    --bg                    : #f7f9fc;
+    --bg-translucent        : rgba(247, 249, 252, 0.8);
     --surface               : #ffffff;
     --surface-muted         : #efede9;
     --surface-hover         : #f3f2ef;
@@ -48,31 +49,32 @@ $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
     --accent                : #1f5fd1;
     --accent-hover          : #174aa6;
     --inverse-bg            : #0e1320;
-    --inverse-text          : #f8f8f6;
+    --inverse-text          : #f7f9fc;
     --shadow-sm             : 0 1px 3px rgba(14, 19, 32, 0.05);
     --shadow-md             : 0 6px 16px rgba(14, 19, 32, 0.08);
 
     --blue                  : #1f5fd1;
-    --lavender              : #6a55c9;
-    --blue-soft             : #8db4ee;
+    --burgundy              : #8c1d40;
     --stone                 : #857a72;
     --glass                 : rgba(255, 255, 255, 0.72);
     --glass-line            : rgba(14, 19, 32, 0.08);
-    --line                  : rgba(60, 50, 44, 0.11);
+    --line                  : rgba(14, 19, 32, 0.11);
     --glow-blue             : rgba(64, 150, 255, 0.24);
-    --glow-sky              : rgba(120, 190, 255, 0.30);
-    --glow-stone            : rgba(214, 204, 194, 0.50);
+    --glow-burgundy         : rgba(128, 24, 56, 0.18);
     --tint-blue             : rgba(80, 160, 255, 0.14);
     --tint-sky              : rgba(110, 180, 255, 0.20);
     --tint-stone            : rgba(214, 204, 194, 0.40);
-    --media                 : #ece7e2;
+    --tint-burgundy         : rgba(128, 24, 56, 0.18);
+    --wash-stone-start      : rgba(214, 204, 194, 0.15);
+    --wash-stone-end        : rgba(214, 204, 194, 0.08);
+    --media                 : #e9eef6;
     --media-blue            : rgba(80, 160, 255, 0.55);
     --media-sky             : rgba(130, 195, 255, 0.60);
 
     --badge-journal-bg      : var(--tint-blue);
     --badge-journal-text    : #1a52b5;
     --badge-conference-bg   : var(--tint-sky);
-    --badge-conference-text : #5643b0;
+    --badge-conference-text : #8c1d40;
     --badge-workshop-bg     : var(--tint-stone);
     --badge-workshop-text   : #5f554e;
     --badge-preprint-bg     : var(--surface-muted);
@@ -82,8 +84,8 @@ $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @mixin theme-dark {
-    --bg                    : #0c0e13;
-    --bg-translucent        : rgba(12, 14, 19, 0.8);
+    --bg                    : #0b0e14;
+    --bg-translucent        : rgba(11, 14, 20, 0.8);
     --surface               : #13161d;
     --surface-muted         : #1a1e27;
     --surface-hover         : #171b23;
@@ -96,31 +98,32 @@ $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
     --accent                : #7db7ff;
     --accent-hover          : #a9cfff;
     --inverse-bg            : #e9ecf2;
-    --inverse-text          : #0c0e13;
+    --inverse-text          : #0b0e14;
     --shadow-sm             : 0 1px 3px rgba(0, 0, 0, 0.4);
     --shadow-md             : 0 6px 16px rgba(0, 0, 0, 0.45);
 
     --blue                  : #7db7ff;
-    --lavender              : #c6b8ff;
-    --blue-soft             : #4f7fbf;
+    --burgundy              : #ee8fa6;
     --stone                 : #cfc5bc;
     --glass                 : rgba(255, 255, 255, 0.045);
     --glass-line            : rgba(255, 255, 255, 0.09);
     --line                  : rgba(255, 255, 255, 0.10);
     --glow-blue             : rgba(64, 150, 255, 0.20);
-    --glow-sky              : rgba(90, 170, 255, 0.16);
-    --glow-stone            : rgba(221, 211, 202, 0.07);
+    --glow-burgundy         : rgba(160, 36, 78, 0.14);
     --tint-blue             : rgba(64, 150, 255, 0.12);
     --tint-sky              : rgba(90, 170, 255, 0.14);
     --tint-stone            : rgba(221, 211, 202, 0.10);
-    --media                 : #17191f;
+    --tint-burgundy         : rgba(160, 36, 78, 0.14);
+    --wash-stone-start      : rgba(221, 211, 202, 0.12);
+    --wash-stone-end        : rgba(221, 211, 202, 0.06);
+    --media                 : #131926;
     --media-blue            : rgba(64, 150, 255, 0.45);
     --media-sky             : rgba(110, 185, 255, 0.35);
 
     --badge-journal-bg      : var(--tint-blue);
     --badge-journal-text    : #a9cfff;
     --badge-conference-bg   : var(--tint-sky);
-    --badge-conference-text : #d6ccff;
+    --badge-conference-text : #f2a3b6;
     --badge-workshop-bg     : var(--tint-stone);
     --badge-workshop-text   : #ddd3ca;
     --badge-preprint-bg     : var(--surface-muted);
