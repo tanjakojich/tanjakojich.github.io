@@ -197,6 +197,24 @@
     var(--media);
 }
 
+/* Keyboard users can jump past the header; hidden until focused */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--inverse-bg);
+  color: var(--inverse-text) !important;
+  font-size: 0.875rem;
+  text-decoration: none !important;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+
+  &:focus { transform: none; }
+}
+
 /* Visible keyboard focus everywhere */
 a:focus-visible,
 button:focus-visible,

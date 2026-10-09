@@ -169,7 +169,9 @@
 
   &__icon {
     position: absolute;
-    font-size: 1rem;
+    inset: 0;
+    margin: auto;
+    font-size: 1.125rem;
     transition: opacity 0.3s ease, transform 0.4s $ease-out;
   }
 

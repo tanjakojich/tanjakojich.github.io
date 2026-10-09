@@ -5,6 +5,11 @@
 
 @media (prefers-reduced-motion: no-preference) {
 
+  /* Glide to in-page anchors (section chips, "#cv") */
+  html {
+    scroll-behavior: smooth;
+  }
+
   /* Smooth colour change while switching between light and dark */
   html.theme-transition,
   html.theme-transition *,
