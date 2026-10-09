@@ -182,8 +182,8 @@
     padding-top: 18px;
     border-top: 1px solid var(--blue);
 
-    &--stone   { border-top-color: var(--stone); }
-    &--neutral { border-top-color: var(--text-subtle); }
+    &--sky   { border-top-color: var(--blue-soft); }
+    &--stone { border-top-color: var(--stone); }
 
     p {
       margin: 10px 0 0;
