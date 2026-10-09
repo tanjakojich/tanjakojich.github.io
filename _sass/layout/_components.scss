@@ -121,20 +121,33 @@
   }
 }
 
-/* Hero backdrop: three soft glows plus a perspective grid that drifts */
+/* Hero backdrop: three soft glows plus a perspective grid that drifts.
+   Both fade out towards the bottom, so the section has no visible lower edge
+   where the cards below overlap it. */
 .hero-backdrop {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  background:
-    radial-gradient(55% 70% at 82% 35%, var(--glow-lavender), transparent 70%),
-    radial-gradient(45% 60% at 12% 15%, var(--glow-blue), transparent 70%),
-    radial-gradient(50% 45% at 40% 100%, var(--glow-stone), transparent 70%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(55% 70% at 82% 35%, var(--glow-lavender), transparent 70%),
+      radial-gradient(45% 60% at 12% 15%, var(--glow-blue), transparent 70%),
+      radial-gradient(50% 40% at 40% 78%, var(--glow-stone), transparent 70%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+    pointer-events: none;
+  }
 
   &__floor {
     position: absolute;
     left: -20%;
     right: -20%;
-    bottom: -40px;
+    bottom: 40px;
     height: 300px;
     background-image:
       linear-gradient(var(--grid-line) 1px, transparent 1px),
@@ -142,8 +155,8 @@
     background-size: 56px 56px;
     transform: perspective(520px) rotateX(62deg);
     transform-origin: center bottom;
-    -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 85%);
-    mask-image: linear-gradient(to top, #000 10%, transparent 85%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 45%, transparent 90%);
+    mask-image: linear-gradient(to top, transparent 0%, #000 45%, transparent 90%);
     pointer-events: none;
   }
 
