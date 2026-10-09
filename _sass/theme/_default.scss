@@ -29,8 +29,8 @@ $sidebar-screen-min-width   : 1024px;
 $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
 
 /* Design tokens: the "blue, lavender & stone" palette.
-   Blue is the primary accent (labels, links), lavender the highlight,
-   stone the calm neutral. Every colour on the site should come from these
+   Blue is the primary accent (labels, links), stone the calm neutral;
+   both colour the surfaces. Lavender is a text-only highlight. Every colour on the site should come from these
    variables so that the light and dark themes stay in sync. */
 @mixin theme-light {
     --bg                    : #f8f8f6;
@@ -58,18 +58,17 @@ $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
     --glass-line            : rgba(14, 19, 32, 0.08);
     --line                  : rgba(60, 50, 44, 0.11);
     --glow-blue             : rgba(64, 150, 255, 0.24);
-    --glow-lavender         : rgba(180, 165, 255, 0.30);
+    --glow-accent           : rgba(214, 204, 194, 0.55);
     --glow-stone            : rgba(214, 204, 194, 0.50);
     --tint-blue             : rgba(80, 160, 255, 0.14);
-    --tint-lavender         : rgba(185, 170, 255, 0.20);
     --tint-stone            : rgba(214, 204, 194, 0.40);
     --media                 : #ece7e2;
     --media-blue            : rgba(80, 160, 255, 0.55);
-    --media-lavender        : rgba(180, 165, 255, 0.55);
+    --media-stone           : rgba(201, 184, 170, 0.60);
 
     --badge-journal-bg      : var(--tint-blue);
     --badge-journal-text    : #1a52b5;
-    --badge-conference-bg   : var(--tint-lavender);
+    --badge-conference-bg   : var(--surface-muted);
     --badge-conference-text : #5643b0;
     --badge-workshop-bg     : var(--tint-stone);
     --badge-workshop-text   : #5f554e;
@@ -105,18 +104,17 @@ $ease-out                   : cubic-bezier(0.22, 1, 0.36, 1);
     --glass-line            : rgba(255, 255, 255, 0.09);
     --line                  : rgba(255, 255, 255, 0.10);
     --glow-blue             : rgba(64, 150, 255, 0.20);
-    --glow-lavender         : rgba(170, 150, 255, 0.16);
-    --glow-stone            : rgba(221, 211, 202, 0.07);
+    --glow-accent           : rgba(64, 150, 255, 0.12);
+    --glow-stone            : rgba(221, 211, 202, 0.08);
     --tint-blue             : rgba(64, 150, 255, 0.12);
-    --tint-lavender         : rgba(170, 150, 255, 0.13);
     --tint-stone            : rgba(221, 211, 202, 0.10);
     --media                 : #17191f;
     --media-blue            : rgba(64, 150, 255, 0.45);
-    --media-lavender        : rgba(170, 150, 255, 0.38);
+    --media-stone           : rgba(209, 196, 185, 0.28);
 
     --badge-journal-bg      : var(--tint-blue);
     --badge-journal-text    : #a9cfff;
-    --badge-conference-bg   : var(--tint-lavender);
+    --badge-conference-bg   : var(--surface-muted);
     --badge-conference-text : #d6ccff;
     --badge-workshop-bg     : var(--tint-stone);
     --badge-workshop-text   : #ddd3ca;
