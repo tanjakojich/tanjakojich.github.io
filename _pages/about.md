@@ -2,7 +2,6 @@
 permalink: /
 seo_title: "Dr. Tanja Kojić – UX & XR Researcher, TU Berlin"
 description: "Senior Scientist at the Quality and Usability Lab, TU Berlin. Research on user experience, safety and acceptance of immersive and interactive technology."
-author_profile: true
 redirect_from: 
   - /about/
   - /about.html

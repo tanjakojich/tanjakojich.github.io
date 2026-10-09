@@ -3,25 +3,20 @@
    ========================================================================== */
 
 #main {
-  @include container;
   @include clearfix;
-  margin-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: $site-width;
+  margin: 2em auto 0;
+  padding-left: $site-gutter;
+  padding-right: $site-gutter;
   animation: intro 0.5s $ease-out both;
   animation-delay: 0.05s;
-
-  @include breakpoint($x-large) {
-    max-width: $x-large;
-  }
 }
 
+/* Running text reads best at about 70 characters per line */
 .page {
-  @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
-  }
+  max-width: 760px;
 
   .page__inner-wrap {
     @include full();

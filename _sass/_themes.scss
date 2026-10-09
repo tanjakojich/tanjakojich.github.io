@@ -61,6 +61,10 @@ $medium-wide                : 900px !default;
 $large                      : 925px !default;
 $x-large                    : 1280px !default;
 
+/* Shared width of header, content and footer: 1140px of content plus side gutters */
+$site-gutter                : 24px;
+$site-width                 : 1140px + 2 * $site-gutter;
+
 /* ==========================================================================
    Grid
    ========================================================================== */
