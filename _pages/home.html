@@ -1,0 +1,129 @@
+---
+layout: home
+permalink: /
+seo_title: "Dr. Tanja Kojić – UX & XR Researcher, TU Berlin"
+description: "Senior Scientist at the Quality and Usability Lab, TU Berlin. Research on user experience, safety and acceptance of immersive and interactive technology."
+hide_footer_contact: true
+---
+
+{% assign pubs = site.data.publications %}
+{% assign latest = pubs | where: "latest", true | first %}
+{% unless latest %}{% assign latest = pubs | sort: "year" | last %}{% endunless %}
+{% assign years = pubs | map: "year" | sort %}
+{% assign busiest = nil %}
+{% assign by_year = pubs | group_by: "year" %}
+{% for group in by_year %}
+  {% if busiest == nil or group.size > busiest.size %}{% assign busiest = group %}{% endif %}
+{% endfor %}
+{% assign project = site.data.projects | where: "featured", true | first %}
+{% assign talks = site.data.talks | sort: "sort_date" | reverse %}
+
+<section class="hero-backdrop home-hero">
+  <div class="hero-backdrop__floor" aria-hidden="true"></div>
+  <div class="home-hero__inner">
+    <div class="home-hero__text">
+      <p class="label-mono home-hero__eyebrow">Senior Scientist &amp; UX Researcher · Quality &amp; Usability Lab, TU Berlin</p>
+      <h1 class="home-hero__title">Focused on making technology work in the real world <span class="home-hero__accent">with</span> the people who use it.</h1>
+      <p class="home-hero__lead">Dr. Tanja Kojić, Senior Scientist at the Quality and Usability Lab, TU Berlin. I measure user experience, safety and acceptance of interactive systems, from controlled laboratory studies to classrooms and public spaces. My work connects academic research with real human experience.</p>
+      <div class="home-hero__actions">
+        <a class="btn-pill btn-pill--primary" href="{{ '/research/' | relative_url }}">Read the research</a>
+        <a class="btn-pill btn-pill--glass" href="{{ '/files/Tanja_Kojic_CV.pdf' | relative_url }}">Curriculum vitae (PDF)</a>
+      </div>
+    </div>
+    <div class="portrait-rings home-hero__portrait">
+      <img src="{{ '/images/' | append: site.author.avatar | relative_url }}" alt="Portrait of Dr. Tanja Kojić" width="260" height="260">
+    </div>
+  </div>
+</section>
+
+<div class="home-grid">
+  <div class="bento">
+
+    {% if latest %}
+    {% if latest.url %}{% assign latest_link = latest.url %}{% elsif latest.doi %}{% assign latest_link = latest.doi | prepend: 'https://doi.org/' %}{% else %}{% assign latest_link = '/publications/' | relative_url %}{% endif %}
+    <article class="glass-card span-4 home-card" data-reveal>
+      <p class="label-mono">Latest paper</p>
+      <h2 class="home-card__title"><a href="{{ latest_link }}">{{ latest.title }}</a></h2>
+      <p class="home-card__meta">{% assign names = latest.authors | split: ';' %}{% for name in names %}{{ name | split: ',' | first | strip }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      <div class="home-card__chips">
+        <span class="chip">{{ latest.type | capitalize }} · {{ latest.year }}</span>
+      </div>
+    </article>
+    {% endif %}
+
+    {% if project %}
+    <article class="glass-card glass-card--flush span-4 home-card" data-reveal>
+      {% if project.image %}
+        <img class="home-card__image" src="{{ '/images/' | append: project.image | relative_url }}" alt="" loading="lazy">
+      {% else %}
+        <div class="media-placeholder" aria-hidden="true"></div>
+      {% endif %}
+      <div class="home-card__body">
+        <p class="label-mono">{{ project.label }}</p>
+        <h2 class="home-card__title"><a href="{{ project.url }}">{{ project.name }}</a></h2>
+        <p class="home-card__text">{{ project.summary }}</p>
+      </div>
+    </article>
+    {% endif %}
+
+    <article class="glass-card glass-card--lavender span-4 home-card home-stats" data-reveal>
+      <p class="label-mono label-mono--lavender">In numbers</p>
+      <div class="home-stats__item">
+        <span class="home-stats__value">{{ pubs | size }}</span>
+        <span class="home-stats__caption">peer-reviewed papers and preprints, {{ years | first }} to {{ years | last }}</span>
+      </div>
+      {% if busiest %}
+      <div class="home-stats__item">
+        <span class="home-stats__value">{{ busiest.size }}</span>
+        <span class="home-stats__caption">published in {{ busiest.name }} alone</span>
+      </div>
+      {% endif %}
+      <a class="home-stats__link" href="{{ '/publications/' | relative_url }}">Browse publications</a>
+    </article>
+
+    <section class="glass-card span-12 home-focus" data-reveal aria-label="Research focus">
+      <div class="home-focus__item home-focus__item--blue">
+        <h2 class="home-focus__title">Human experience in XR</h2>
+        <p>Presence, comfort, well-being and acceptance in immersive environments, including long-term use.</p>
+      </div>
+      <div class="home-focus__item home-focus__item--lavender">
+        <h2 class="home-focus__title">Intelligent, multimodal interaction</h2>
+        <p>Adaptive and AI-supported interaction, from avatars to assistants, that stays natural and accessible.</p>
+      </div>
+      <div class="home-focus__item home-focus__item--stone">
+        <h2 class="home-focus__title">Real-world context</h2>
+        <p>XR in education, culture, mobility and safety, measured by the value it creates for people.</p>
+      </div>
+    </section>
+
+    <section class="glass-card span-8 home-speaking" data-reveal>
+      <div class="home-speaking__head">
+        <p class="label-mono">Speaking</p>
+        <a href="{{ '/talks/' | relative_url }}">All talks and teaching</a>
+      </div>
+      <ul class="home-speaking__list">
+        {% for talk in talks limit: 3 %}
+        <li class="home-speaking__row">
+          <span class="home-speaking__date">{{ talk.date | slice: 0, 3 }} {{ talk.date | split: ' ' | last }}</span>
+          <div>
+            <p class="home-speaking__title">{{ talk.title }}</p>
+            <p class="home-speaking__event">{% include talk-label.html talk=talk %} · {{ talk.event }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="glass-card glass-card--contact span-4 home-contact" data-reveal>
+      <p class="label-mono label-mono--lavender">Contact</p>
+      <h2 class="home-contact__title">Write to me about collaboration or talks.</h2>
+      <a class="home-contact__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      <div class="home-contact__links">
+        <a class="btn-pill btn-pill--glass btn-pill--small" href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
+        <a class="btn-pill btn-pill--glass btn-pill--small" href="{{ site.author.googlescholar }}">Scholar</a>
+        <a class="btn-pill btn-pill--glass btn-pill--small" href="{{ site.author.orcid }}">ORCID</a>
+      </div>
+    </section>
+
+  </div>
+</div>

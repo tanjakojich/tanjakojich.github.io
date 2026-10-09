@@ -1,11 +1,13 @@
 {% assign author = site.author %}
 <div class="site-footer__inner">
+  {% unless page.hide_footer_contact %}
   <div class="site-footer__contact">
     <p class="site-footer__title">Write to me about collaboration or talks.</p>
     {% if author.email %}
       <a class="site-footer__email" href="mailto:{{ author.email }}">{{ author.email }}</a>
     {% endif %}
   </div>
+  {% endunless %}
 
   <ul class="site-footer__links" aria-label="Profiles">
     {% if author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn</a></li>{% endif %}

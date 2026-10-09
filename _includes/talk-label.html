@@ -1,0 +1,8 @@
+{%- comment -%}Short label for a talk from _data/talks.yml: its badge, or a name for its type.{%- endcomment -%}
+{%- if include.talk.badge -%}{{ include.talk.badge }}
+{%- elsif include.talk.type == 'keynote' -%}Keynote
+{%- elsif include.talk.type == 'invited' -%}Invited Talk
+{%- elsif include.talk.type == 'conference' -%}Conference Talk
+{%- elsif include.talk.type == 'media' -%}Media
+{%- else -%}Outreach
+{%- endif -%}

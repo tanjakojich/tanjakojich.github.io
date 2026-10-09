@@ -1,0 +1,8 @@
+# Research projects. The entry with featured: true appears on the home page.
+# image is optional (a file in /images/); without it the card shows a soft gradient.
+
+- name: "DIDYMOS-XR"
+  label: "Project · Horizon Europe"
+  url: "https://didymos-xr.eu/"
+  summary: "Real-time digital twins that combine multi-sensor data and AI, evaluated with the people who will use them."
+  featured: true
