@@ -4,6 +4,9 @@ permalink: /about/
 description: "About Dr. Tanja Kojić, Senior Scientist at the Quality and Usability Lab, TU Berlin, researching the human side of immersive systems."
 redirect_from:
   - /about.html
+  - /cv/
+  - /resume
+  - /resume/
 ---
 
 I am Dr. Tanja Kojić, exploring where new media and intelligent technologies meet, and how immersive solutions shape human experience across real and virtual worlds. 
@@ -23,3 +26,14 @@ Designing adaptive, multimodal, and AI-supported interaction systems for immersi
 
 - **Real-World Context** -- 
 Studying how immersive and interactive technologies are experienced, adopted, and used in real-life environments. This includes applications in domains such as education, culture, mobility, and safety, with a focus on translating technological innovation into solutions that create measurable value for users, organisations, and society.
+
+
+## Curriculum Vitae {#cv}
+
+<div class="glass-card cv-card">
+<div class="cv-card__text">
+<p class="label-mono">PDF{% if site.cv_updated %} · Updated {{ site.cv_updated }}{% endif %}</p>
+<p class="cv-card__title">Full CV with positions, publications, teaching and professional service.</p>
+</div>
+<a class="btn-pill btn-pill--primary" href="{{ '/files/Tanja_Kojic_CV.pdf' | relative_url }}">Download CV</a>
+</div>

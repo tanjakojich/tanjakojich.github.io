@@ -1,0 +1,17 @@
+<script>
+  /* Highlight the chip of the section currently in view.
+     Block comments only: GitHub Pages compresses this HTML onto one line. */
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.section-nav a'));
+    var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+    if (!sections.length) return;
+    function update() {
+      var offset = 140;
+      var current = null;
+      sections.forEach(function (s) { if (s.getBoundingClientRect().top - offset <= 0) current = s.id; });
+      links.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + current); });
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>

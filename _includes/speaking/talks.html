@@ -1,0 +1,117 @@
+<p class="page-intro">I enjoy sharing research beyond papers, from keynotes to podcasts and science slams. Below you'll find my invited talks and public appearances.</p>
+
+{% assign keynotes = site.data.talks | where: "type", "keynote" %}
+{% assign invited = site.data.talks | where: "type", "invited" %}
+{% assign keynote_invited = keynotes | concat: invited | sort: "sort_date" | reverse %}
+
+{% assign conference = site.data.talks | where: "type", "conference" | sort: "sort_date" | reverse %}
+
+{% assign media = site.data.talks | where: "type", "media" %}
+{% assign outreach = site.data.talks | where: "type", "outreach" %}
+{% assign media_outreach = media | concat: outreach | sort: "sort_date" | reverse %}
+
+{% if keynote_invited.size > 0 %}
+<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true"><i class="fas fa-microphone"></i></span> Keynotes & Invited Talks</h3>
+
+{% for talk in keynote_invited %}
+<div class="talk-card">
+  <div class="talk-card-top">
+    <div class="talk-title-row">
+      <span class="talk-title">"{{ talk.title }}"</span>
+      <span class="talk-badge">
+        {%- if talk.badge -%}
+          {{ talk.badge }}
+        {%- elsif talk.type == 'keynote' -%}
+          Keynote
+        {%- elsif talk.type == 'invited' -%}
+          Invited Talk
+        {%- endif -%}
+      </span>
+    </div>
+    <span class="talk-date">{{ talk.date }}</span>
+  </div>
+  {% if talk.description %}
+  <div class="talk-desc">{{ talk.description }}</div>
+  {% endif %}
+  <div class="talk-venue">{{ talk.event }}{%- if talk.location %}, {{ talk.location }}{%- endif %}</div>
+  {% if talk.links and talk.links.size > 0 %}
+  <div class="talk-links">
+    {%- for link in talk.links -%}
+      {%- if forloop.index > 1 %}<span class="talk-links-separator">·</span>{%- endif %}
+      <a href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+{% if conference.size > 0 %}
+<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true"><i class="fas fa-presentation-screen"></i></span> Conference Talks</h3>
+
+{% for talk in conference %}
+<div class="talk-card">
+  <div class="talk-card-top">
+    <div class="talk-title-row">
+      <span class="talk-title">"{{ talk.title }}"</span>
+      <span class="talk-badge">
+        {%- if talk.badge -%}
+          {{ talk.badge }}
+        {%- else -%}
+          Conference Talk
+        {%- endif -%}
+      </span>
+    </div>
+    <span class="talk-date">{{ talk.date }}</span>
+  </div>
+  {% if talk.description %}
+  <div class="talk-desc">{{ talk.description }}</div>
+  {% endif %}
+  <div class="talk-venue">{{ talk.event }}{%- if talk.location %}, {{ talk.location }}{%- endif %}</div>
+  {% if talk.links and talk.links.size > 0 %}
+  <div class="talk-links">
+    {%- for link in talk.links -%}
+      {%- if forloop.index > 1 %}<span class="talk-links-separator">·</span>{%- endif %}
+      <a href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
+{% if media_outreach.size > 0 %}
+<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true"><i class="fas fa-podcast"></i></span> Media & Outreach</h3>
+
+{% for talk in media_outreach %}
+<div class="talk-card">
+  <div class="talk-card-top">
+    <div class="talk-title-row">
+      <span class="talk-title">"{{ talk.title }}"</span>
+      <span class="talk-badge">
+        {%- if talk.badge -%}
+          {{ talk.badge }}
+        {%- elsif talk.type == 'media' -%}
+          Podcast
+        {%- elsif talk.type == 'outreach' -%}
+          Science Communication
+        {%- endif -%}
+      </span>
+    </div>
+    <span class="talk-date">{{ talk.date }}</span>
+  </div>
+  {% if talk.description %}
+  <div class="talk-desc">{{ talk.description }}</div>
+  {% endif %}
+  <div class="talk-venue">{{ talk.event }}{%- if talk.location %}, {{ talk.location }}{%- endif %}</div>
+  {% if talk.links and talk.links.size > 0 %}
+  <div class="talk-links">
+    {%- for link in talk.links -%}
+      {%- if forloop.index > 1 %}<span class="talk-links-separator">·</span>{%- endif %}
+      <a href="{{ link.url }}" rel="noopener">{{ link.label }}</a>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endif %}

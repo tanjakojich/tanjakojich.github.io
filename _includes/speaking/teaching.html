@@ -1,165 +1,6 @@
----
-layout: archive
-title: "Teaching & Mentoring"
-description: "Courses, guest lectures and student projects taught and supervised by Dr. Tanja Kojić at TU Berlin."
-permalink: /teaching/
----
+<p class="page-intro">In my courses, students learn by doing: they build interactive systems and test them with real users. Below you'll find the courses, study projects, and theses I have taught and supervised.</p>
 
-{% include base_path %}
-
-<style>
-  .teaching-hero-desc {
-    text-align: left;
-    color: var(--text-muted);
-    font-size: 0.88em;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .teaching-section-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 1.2em;
-    margin-top: 2em;
-  }
-  .teaching-section-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    background: var(--surface-muted);
-    color: var(--text);
-    border-radius: 6px;
-    font-size: 1em;
-    flex-shrink: 0;
-  }
-  .teaching-section-icon i {
-    font-size: 0.85em;
-  }
-  .course-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1em 1.3em;
-    margin-bottom: 1em;
-    background: var(--surface);
-    display: flex;
-    flex-direction: column;
-    gap: 0.2em;
-  }
-  .course-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .course-title-row {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    flex-wrap: wrap;
-  }
-  .course-title {
-    font-weight: 600;
-    font-size: 1em;
-    color: var(--text);
-  }
-  .role-badge {
-    font-size: 0.72em;
-    padding: 0.2em 0.6em;
-    border-radius: 4px;
-    font-weight: 500;
-    background: var(--surface-muted);
-    color: var(--text-secondary);
-    border: 1px solid var(--border);
-  }
-  .role-badge.ta {
-    background: var(--surface);
-    color: var(--text-secondary);
-    border-color: var(--border);
-  }
-  .course-dates {
-    font-size: 0.82em;
-    color: var(--text-subtle);
-    white-space: nowrap;
-    padding-top: 0.15em;
-  }
-  .course-desc {
-    font-size: 0.88em;
-    color: var(--text-secondary);
-    margin-top: 0.1em;
-  }
-  .course-venue {
-    font-size: 0.82em;
-    color: var(--text-subtle);
-  }
-  .supervision-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.4em;
-    background: var(--surface);
-  }
-  .supervision-card h3 {
-    margin-top: 0;
-    font-size: 1em;
-    font-weight: 600;
-  }
-  .supervision-card p {
-    font-size: 0.88em;
-    color: var(--text-secondary);
-  }
-  .supervision-columns {
-    display: flex;
-    gap: 2em;
-    flex-wrap: wrap;
-    margin-top: 1em;
-  }
-  .supervision-col h4 {
-    font-size: 0.88em;
-    font-weight: 600;
-    margin-bottom: 0.4em;
-    margin-top: 0;
-    color: var(--text);
-  }
-  .supervision-col ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.85em;
-    color: var(--text-secondary);
-  }
-  .supervision-col ul li::before {
-    content: "• ";
-    color: var(--text-subtle);
-  }
-  .study-project-item {
-    font-size: 0.85em;
-    color: var(--text-secondary);
-    margin-bottom: 0.5em;
-    display: flex;
-    justify-content: space-between;
-    gap: 1em;
-  }
-  .study-project-title {
-    flex: 1;
-  }
-  .study-project-year {
-    color: var(--text-subtle);
-    white-space: nowrap;
-    font-weight: 500;
-  }
-</style>
-
-<p class="teaching-hero-desc">In my courses, students learn by doing: they build interactive systems and test them with real users. Below you'll find the courses, study projects, and theses I have taught and supervised.</p>
-
-<div class="teaching-section-header">
-  <span class="teaching-section-icon"><i class="fas fa-book-open"></i></span>
-  Courses
-</div>
+<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true"><i class="fas fa-book-open"></i></span> Courses</h3>
 
 <div class="course-card">
   <div class="course-card-top">
@@ -194,7 +35,7 @@ permalink: /teaching/
     <span class="course-dates">2019–2026</span>
   </div>
   <div class="course-desc">Intensive course on designing and developing VR and AR applications. The course title changed across editions.</div>
-  <div style="margin-top: 0.6em; border-top: 1px solid var(--border); padding-top: 0.6em;">
+  <div class="course-sublist">
     <div class="study-project-item">
       <span class="study-project-title">Gaming for Virtual and Augmented Reality</span>
       <span class="study-project-year">2022–2026</span>
@@ -232,28 +73,25 @@ permalink: /teaching/
     <span class="course-dates">2023–2025</span>
   </div>
   <div class="course-desc">Invited lectures in courses at other universities.</div>
-  <div style="margin-top: 0.6em; border-top: 1px solid var(--border); padding-top: 0.6em;">
+  <div class="course-sublist">
     <div class="study-project-item">
       <div class="study-project-title">
         Ethical Challenges of Using Immersive Technology: Security, Privacy, Accessibility
-        <div style="font-size: 0.88em; color: var(--text-subtle); margin-top: 0.2em;">Immersive Technologies course, University of Zagreb (FER), Croatia</div>
+        <div class="study-project-context">Immersive Technologies course, University of Zagreb (FER), Croatia</div>
       </div>
       <span class="study-project-year">2025</span>
     </div>
     <div class="study-project-item">
       <div class="study-project-title">
         User Experience for Extended Reality
-        <div style="font-size: 0.88em; color: var(--text-subtle); margin-top: 0.2em;">Virtual Reality and Augmented Reality courses, Hochschule Hamm-Lippstadt (HSHL), Germany</div>
+        <div class="study-project-context">Virtual Reality and Augmented Reality courses, Hochschule Hamm-Lippstadt (HSHL), Germany</div>
       </div>
       <span class="study-project-year">2023–2024</span>
     </div>
   </div>
 </div>
 
-<div class="teaching-section-header" style="margin-top:2.5em;">
-  <span class="teaching-section-icon"><i class="fas fa-folder-open"></i></span>
-  Study Projects
-</div>
+<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true"><i class="fas fa-folder-open"></i></span> Study Projects</h3>
 
 <div class="course-card">
   <div class="course-card-top">
@@ -262,8 +100,8 @@ permalink: /teaching/
       <span class="role-badge lecturer">Lecturer</span>
     </div>
   </div>
-  <div class="course-desc" style="margin-top: 0.3em; font-size: 0.88em; color: var(--text-muted);">Interdisciplinary Media Project and Study Project Quality &amp; Usability</div>
-  <div style="margin-top: 0.6em; border-top: 1px solid var(--border); padding-top: 0.6em;">
+  <div class="course-desc course-desc--small">Interdisciplinary Media Project and Study Project Quality &amp; Usability</div>
+  <div class="course-sublist">
     <div class="study-project-item">
       <span class="study-project-title">Stimulating Senses, Recreating Context – an Interdisciplinary Seminar on Art History and VR Technologies</span>
       <span class="study-project-year">2026/27</span>
@@ -299,7 +137,7 @@ permalink: /teaching/
       <span class="role-badge lecturer">Lecturer</span>
     </div>
   </div>
-  <div style="margin-top: 0.6em;">
+  <div class="course-sublist course-sublist--plain">
     <div class="study-project-item">
       <span class="study-project-title">I Can Hear Your Heartbeat: Augmented Reality Gaming Experience</span>
       <span class="study-project-year">2021</span>
@@ -316,17 +154,14 @@ permalink: /teaching/
   <div class="course-venue">Technical University Berlin, Faculty of Electrical Engineering and Computer Science</div>
 </div>
 
-<div class="teaching-section-header" style="margin-top:2.5em;">
-  <span class="teaching-section-icon"><i class="fas fa-user-graduate"></i></span>
-  Student Supervision
-</div>
+<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true"><i class="fas fa-user-graduate"></i></span> Student Supervision</h3>
 
 <div class="supervision-card">
-  <h3>Thesis &amp; Project Mentoring</h3>
+  <h4>Thesis &amp; Project Mentoring</h4>
   <p>I supervise Bachelor's and Master's theses at the Quality and Usability Lab, mainly on user experience in extended reality, multimodal interaction, and user-centred evaluation.</p>
   <div class="supervision-columns">
     <div class="supervision-col">
-      <h4>Focus Areas</h4>
+      <h5>Focus Areas</h5>
       <ul>
         <li>User experience in VR, AR and MR</li>
         <li>Multimodal interaction (hand tracking, voice, passthrough)</li>
@@ -336,7 +171,7 @@ permalink: /teaching/
       </ul>
     </div>
     <div class="supervision-col">
-      <h4>Project Types</h4>
+      <h5>Project Types</h5>
       <ul>
         <li>Bachelor's theses</li>
         <li>Master's theses</li>

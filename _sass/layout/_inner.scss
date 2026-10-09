@@ -1,0 +1,429 @@
+/* ==========================================================================
+   INNER PAGES
+   Publications, Speaking & Teaching, About (CV card), Research and 404.
+   Cards share the frosted look of the home page.
+   ========================================================================== */
+
+/* Mixin: the frosted card surface used by the entry cards below */
+@mixin entry-card {
+  position: relative;
+  border: 1px solid var(--glass-line);
+  border-radius: 20px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.page-intro {
+  max-width: 68ch;
+  margin: 0 0 1.5em;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Sticky row of section chips under the header */
+.section-nav {
+  position: sticky;
+  top: var(--masthead-offset, 64px);
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1.5em 0 0.5em;
+  padding: 10px 0;
+  background: var(--bg);
+  transition: top 0.3s ease;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--glass-line);
+    border-radius: var(--radius-pill);
+    background: var(--glass);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text) !important;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &.is-active {
+      border-color: var(--inverse-bg);
+      background: var(--inverse-bg);
+      color: var(--inverse-text) !important;
+    }
+  }
+
+  &__count {
+    font-family: $mono-font;
+    font-size: 0.6875rem;
+    opacity: 0.7;
+  }
+}
+
+.section-title {
+  margin: 0 0 1em;
+  font-family: $display-font;
+  font-size: 1.625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.pub-section,
+.entry-section {
+  padding-top: 2.5em;
+  scroll-margin-top: 140px;
+}
+
+/* Sub-headings inside Speaking & Teaching ("Keynotes & Invited Talks") */
+.entry-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 2em 0 1em;
+  font-family: $display-font;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--tint-blue);
+    font-size: 0.8rem;
+    color: var(--blue);
+  }
+}
+
+/* Small type pills (talk type, teaching role, publication type) */
+.talk-badge,
+.role-badge,
+.pub-badge {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-family: $mono-font;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.talk-badge { background: var(--tint-lavender); color: var(--badge-conference-text); }
+.role-badge { background: var(--tint-stone); color: var(--badge-workshop-text); }
+.role-badge.lecturer { background: var(--tint-blue); color: var(--badge-journal-text); }
+
+.badge-journal    { background: var(--badge-journal-bg);    color: var(--badge-journal-text); }
+.badge-conference { background: var(--badge-conference-bg); color: var(--badge-conference-text); }
+.badge-workshop   { background: var(--badge-workshop-bg);   color: var(--badge-workshop-text); }
+.badge-preprint   { background: var(--badge-preprint-bg);   color: var(--badge-preprint-text); }
+
+.chip--link {
+  color: var(--blue) !important;
+  text-decoration: none !important;
+
+  &:hover { border-color: var(--blue); }
+}
+
+/* Publications --------------------------------------------------------- */
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub-card {
+  @include entry-card;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 20px 24px;
+
+  @include breakpoint($medium) {
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+  }
+
+  &__year {
+    grid-column: 1 / -1;
+    font-family: $mono-font;
+    font-size: 0.8125rem;
+    color: var(--text-subtle);
+
+    @include breakpoint($medium) {
+      grid-column: auto;
+      padding-top: 3px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $display-font;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text);
+
+    a {
+      color: inherit !important;
+      text-decoration: none !important;
+
+      &:hover { color: var(--blue) !important; }
+    }
+  }
+
+  &__authors,
+  &__venue {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+
+    strong { color: var(--text); font-weight: 600; }
+  }
+
+  &__venue { font-style: italic; }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 6px 0 0;
+  }
+
+  .pub-badge { align-self: start; }
+}
+
+/* Talks ------------------------------------------------------------------ */
+
+.talk-card,
+.course-card,
+.supervision-card {
+  @include entry-card;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+  padding: 20px 24px;
+}
+
+.talk-card-top,
+.course-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px 16px;
+}
+
+.talk-title-row,
+.course-title-row {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.talk-title,
+.course-title {
+  font-family: $display-font;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.talk-date,
+.course-dates,
+.study-project-year {
+  flex-shrink: 0;
+  font-family: $mono-font;
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  white-space: nowrap;
+}
+
+.talk-desc,
+.course-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+
+  &--small { font-size: 0.8125rem; color: var(--text-muted); }
+}
+
+.talk-venue,
+.course-venue {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.talk-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 2px;
+  font-size: 0.8125rem;
+
+  a { text-decoration: none !important; }
+}
+
+.talk-links-separator { color: var(--text-subtle); }
+
+/* Teaching ---------------------------------------------------------------- */
+
+.course-sublist {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+
+  &--plain { border-top: 0; padding-top: 0; }
+}
+
+.study-project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 6px 0;
+}
+
+.study-project-title {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.study-project-context {
+  margin-top: 2px;
+  font-size: 0.8125rem;
+  color: var(--text-subtle);
+}
+
+.supervision-card {
+  gap: 10px;
+
+  h4 {
+    margin: 0;
+    font-family: $display-font;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  h5 {
+    margin: 0 0 6px;
+    font-family: $mono-font;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.1em;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+}
+
+.supervision-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 6px;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* About: CV card ------------------------------------------------------------ */
+
+.cv-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1em;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    flex: 1 1 280px;
+  }
+
+  .page__content &__title,
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+  }
+}
+
+/* Research "Coming Soon" and 404 ------------------------------------------- */
+
+.notice-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 640px;
+  margin: 1.5em 0 2em;
+
+  p:not(.label-mono) {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $display-font;
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+}

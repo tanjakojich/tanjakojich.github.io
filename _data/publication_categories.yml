@@ -1,0 +1,9 @@
+# Sections of the publications page, in order. id matches "categories" in publications.yml.
+- id: xr
+  title: "Immersive Systems & Extended Reality"
+- id: hci
+  title: "HCI, Multimodal Interaction & Avatars"
+- id: affective
+  title: "Affective Computing & Physiological Sensing"
+- id: qoe
+  title: "Quality of Experience & Evaluation Methodology"

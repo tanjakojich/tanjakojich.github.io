@@ -1,0 +1,30 @@
+---
+layout: archive
+title: "Speaking & Teaching"
+description: "Invited talks, panels and keynotes, and courses, guest lectures and student projects by Dr. Tanja Kojić at TU Berlin."
+permalink: /speaking-teaching/
+redirect_from:
+  - /talks/
+  - /teaching/
+---
+{% comment %}
+  Talks come from _data/talks.yml via _includes/speaking/talks.html;
+  courses and supervision are written in _includes/speaking/teaching.html.
+{% endcomment %}
+
+<nav class="section-nav" aria-label="On this page">
+  <a href="#talks">Talks</a>
+  <a href="#teaching">Teaching &amp; Mentoring</a>
+</nav>
+
+<section class="entry-section" id="talks">
+  <h2 class="section-title">Talks</h2>
+  {% include speaking/talks.html %}
+</section>
+
+<section class="entry-section" id="teaching">
+  <h2 class="section-title">Teaching &amp; Mentoring</h2>
+  {% include speaking/teaching.html %}
+</section>
+
+{% include section-nav-script.html %}
