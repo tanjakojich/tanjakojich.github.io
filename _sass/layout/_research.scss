@@ -1,0 +1,128 @@
+/* ==========================================================================
+   RESEARCH
+   One card per project: looping clips on one side, text on the other.
+   Sides alternate on wide screens and stack on narrow ones.
+   ========================================================================== */
+
+.research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.research-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  @include breakpoint($medium-wide) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+
+    &:nth-child(even) .research-media { order: 2; }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px 30px 30px;
+
+    p { margin: 0; }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $display-font;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--text);
+
+    a { color: inherit; }
+  }
+
+  &__award {
+    background: var(--tint-burgundy);
+    color: var(--burgundy);
+  }
+
+  &__summary {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  &__papers-label { padding-top: 6px; }
+
+  &__papers {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+    line-height: 1.45;
+
+    li { margin: 0; }
+  }
+
+  &__year {
+    font-family: $mono-font;
+    font-size: 0.6875rem;
+    color: var(--text-subtle);
+    white-space: nowrap;
+  }
+
+  &__funding {
+    margin-top: auto !important;
+    padding-top: 8px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--text-subtle);
+  }
+}
+
+/* Clip area: a soft tinted panel holding one clip or a small grid of them */
+.research-media {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 14px;
+  background:
+    radial-gradient(circle at 30% 30%, var(--media-blue), transparent 60%),
+    var(--media);
+
+  &--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Two square clips on top, the wide one underneath */
+  &--3 > :last-child { grid-column: 1 / -1; }
+
+  &--6 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @include breakpoint($medium) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  &__item {
+    min-width: 0;
+    margin: 0;
+  }
+
+  &__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    object-fit: cover;
+    background: var(--media);
+  }
+
+  &__caption {
+    padding-top: 6px;
+    font-family: $mono-font;
+    font-size: 0.6875rem;
+    text-align: center;
+    color: var(--text-muted);
+  }
+}

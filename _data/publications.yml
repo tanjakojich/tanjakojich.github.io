@@ -77,6 +77,14 @@
   type: journal
   categories: [xr]
 
+- title: "Investigation of personal space perception in augmented reality"
+  authors: "Vergari, Maurizio; Spang, Robert; Kojić, Tanja; Hesse, Britta; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2022
+  venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
+  type: conference
+  categories: [xr]
+  doi: "10.1109/QoMEX55416.2022.9900887"
+
 - title: "QUALINET white paper on definitions of immersive media experience (IMEx)"
   authors: "Perkis, Andrew; Timmerer, Christian; Baraković, Sabina; Husić, Jasmina Baraković; Bech, Søren; Bosse, Sebastian; Botev, Jean; Brunnström, Kjell; Cruz, Luis; De Moor, Katrien; et al."
   year: 2020

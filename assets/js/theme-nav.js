@@ -173,4 +173,38 @@
       observer.observe(el);
     });
   }
+
+  /* External links open in a new tab
+     ========================================================================== */
+
+  document.querySelectorAll('a[href^="http"]').forEach(function (link) {
+    if (link.hostname === window.location.hostname) return;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  });
+
+  /* Looping project clips
+     ========================================================================== */
+
+  var clips = document.querySelectorAll('video[data-autoplay]');
+
+  // With reduced motion, show the poster and let people press play themselves
+  if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+    clips.forEach(function (video) { video.controls = true; });
+  } else if (clips.length) {
+    // Play only while on screen; preload="none" means nothing loads before that
+    var clipObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var video = entry.target;
+        if (entry.isIntersecting) {
+          var playing = video.play();
+          if (playing) playing.catch(function () { video.controls = true; });
+        } else {
+          video.pause();
+        }
+      });
+    }, { rootMargin: '100px 0px', threshold: 0.1 });
+
+    clips.forEach(function (video) { clipObserver.observe(video); });
+  }
 })();

@@ -2,16 +2,58 @@
 layout: archive
 title: "Research"
 permalink: /research/
-description: "Research case studies by Dr. Tanja Kojić: user experience, safety and acceptance of immersive and interactive technology."
+description: "Research projects by Dr. Tanja Kojić: digital twins, haptics, interaction modalities, social acceptability, exergames, reading and emotion in VR."
 redirect_from:
   - /portfolio/
 ---
+{% comment %}
+  Projects come from _data/research.yml; each clip is rendered by
+  _includes/research-media.html from files in /images/research/.
+{% endcomment %}
 
-<div class="glass-card glass-card--tinted notice-card">
-  <p class="label-mono label-mono--burgundy">Case studies</p>
-  <h2 class="notice-card__title">⏳ Coming Soon</h2>
-  <p>I'm working on something exciting. Check back soon!</p>
-  <div class="notice-card__actions">
-    <a class="btn-pill btn-pill--glass" href="{{ '/publications/' | relative_url }}">Browse publications</a>
+{% assign groups = "eu|EU projects,applications|Applications,methods|Methods" | split: "," %}
+
+<p class="page-intro">A selection of projects from the Quality and Usability Lab, TU Berlin: how people experience immersive technology, measured in controlled studies and in the places where it is used.</p>
+
+<nav class="section-nav" aria-label="On this page">
+  {% for g in groups %}{% assign parts = g | split: "|" %}<a href="#{{ parts[0] }}">{{ parts[1] }}</a>{% endfor %}
+</nav>
+
+{% for g in groups %}
+{% assign parts = g | split: "|" %}
+{% assign projects = site.data.research | where: "group", parts[0] %}
+<section class="entry-section" id="{{ parts[0] }}">
+  <h2 class="section-title">{{ parts[1] }}</h2>
+  <div class="research-list">
+    {% for project in projects %}
+    {% assign clips = project.media | size %}
+    <article class="glass-card glass-card--flush research-card" id="{{ project.slug }}" data-reveal>
+      {% comment %} Several wide (16:9) clips stack; square clips sit side by side {% endcomment %}
+      <div class="research-media{% if clips > 1 %}{% if project.media[0].ratio %} research-media--grid research-media--{{ clips }}{% else %} research-media--stack{% endif %}{% endif %}">
+        {% for clip in project.media %}{% include research-media.html clip=clip %}{% endfor %}
+      </div>
+      <div class="research-card__body">
+        <p class="label-mono">{{ project.category }}</p>
+        <h3 class="research-card__title">{% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}</h3>
+        {% if project.award %}<p><span class="chip research-card__award">{{ project.award }}</span></p>{% endif %}
+        <p class="research-card__summary">{{ project.summary }}</p>
+        {% if project.papers %}
+        <p class="label-mono research-card__papers-label">Related papers</p>
+        <ul class="research-card__papers">
+          {% for title in project.papers %}
+          {% assign pub = site.data.publications | where: "title", title | first %}
+          {% if pub.url %}{% assign link = pub.url %}{% elsif pub.doi %}{% assign link = pub.doi | prepend: 'https://doi.org/' %}{% else %}{% assign link = '/publications/' | relative_url %}{% endif %}
+          {% comment %} Titles not (yet) in publications.yml show without a link {% endcomment %}
+          <li>{% if pub %}<a href="{{ link }}">{{ title }}</a> <span class="research-card__year">{{ pub.year }}</span>{% else %}{{ title }}{% endif %}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if project.funding %}<p class="research-card__funding">{{ project.funding }}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
   </div>
-</div>
+</section>
+{% endfor %}
+
+{% include section-nav-script.html %}

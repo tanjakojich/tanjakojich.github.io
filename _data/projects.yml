@@ -5,4 +5,5 @@
   label: "Project · Horizon Europe"
   url: "https://didymos-xr.eu/"
   summary: "Real-time digital twins that combine multi-sensor data and AI, evaluated with the people who will use them."
+  image: "research/didymos.jpg"
   featured: true

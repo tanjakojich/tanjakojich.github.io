@@ -1,0 +1,124 @@
+# Research projects, shown on /research/ in this order, grouped by `group`.
+# group: eu | applications | methods
+# media: clips in /images/research/ — <src>.mp4 plus a <src>.jpg poster.
+#   Optional per clip: caption (shown under the clip) and ratio ("1/1", "16/9"; default 16/9).
+# papers: exact titles from _data/publications.yml; they link to the paper or to /publications/.
+# Optional: award, funding (small print), url (project website).
+
+- slug: didymos
+  group: eu
+  title: "DIDYMOS-XR"
+  category: "EU project · Horizon Europe"
+  summary: "Real-time digital twins of cities and industrial sites that combine multi-sensor data and AI. Our user-centred evaluation looks at how people perceive the quality and realism of these twins, and what makes them useful in practice."
+  url: "https://didymos-xr.eu/"
+  funding: "DIDYMOS-XR is funded by the European Union under grant agreement No. 101092875."
+  media:
+    - { src: didymos, ratio: "600/278", alt: "Walking through a photorealistic digital twin of a city street in VR" }
+  papers:
+    - "Investigating the Effect of Prior Exposure and Fidelity on Quality and Realism Perception of VR Digital Twins"
+    - "User-centric evaluation methods for digital twin applications in extended reality"
+    - "Digital twins for extended reality tourism: user experience evaluation across user groups"
+
+- slug: accordion
+  group: eu
+  title: "ACCORDION"
+  category: "EU project · Horizon 2020"
+  summary: "Edge and cloud computing for demanding, latency-sensitive applications such as collaborative VR. We studied how network quality shapes the experience of the people using them."
+  url: "https://www.accordion-project.eu/"
+  funding: "ACCORDION received funding from the European Union’s Horizon 2020 ICT Cloud Computing programme under grant agreement No. 871793."
+  media:
+    - { src: accordion, alt: "A surgeon wearing a VR headset next to the shared virtual scene they are working in" }
+  papers:
+    - "VR cloud gaming UX: Exploring the impact of network quality on emotion, presence, game experience and cybersickness"
+
+- slug: weight
+  group: applications
+  title: "Dynamic weight change"
+  category: "Haptics · Interaction"
+  summary: "Can a virtual mug feel heavier as it fills? Pseudo-haptics (small changes to how the hand moves on screen) combined with vibrotactile feedback make people perceive the weight change, without any extra hardware."
+  media:
+    - { src: weight-pour, caption: "Pour water", alt: "A participant in VR pours water from a virtual jug, shown next to the headset view" }
+    - { src: weight-fill, caption: "Fill water", alt: "A participant in VR holds a virtual mug while it fills with water" }
+  papers:
+    - "Experiencing dynamic weight changes in virtual reality through pseudo-haptics and vibrotactile feedback"
+
+- slug: handtracking
+  group: applications
+  title: "Hand tracking vs controllers"
+  category: "Interaction modalities"
+  award: "Best Workshop Paper · MMVE 2025"
+  summary: "The same tasks done with bare hands or with controllers. Modalities are not interchangeable: each has its own trade-offs in usability, comfort and engagement, and there is no single best one."
+  media:
+    - { src: handtracking-1, ratio: "1/1", alt: "A tracked virtual hand pressing buttons in a VR game" }
+    - { src: handtracking-2, ratio: "1/1", alt: "A tracked virtual hand typing a code on a floating keypad" }
+    - { src: handtracking-cubes, alt: "In mixed reality, a hand picks up numbered cubes from a real table" }
+  papers:
+    - "Influence of hand tracking as a way of interaction in virtual reality on user experience"
+    - "Influence of Gameplay Duration, Hand Tracking, and Controller Based Control Methods on UX in VR"
+    - "Multimodal User Experience in Extended Reality: Exploring Hand Tracking, Voice, and Passthrough Interactions"
+
+- slug: social
+  group: applications
+  title: "Social acceptability"
+  category: "Context · Public spaces"
+  summary: "Participants played VR games inside 360° recordings of public places, so we could control how many people were around and how close they were. The more people nearby, the lower the feeling of safety and the worse the experience: players fear collisions and being recorded."
+  award: "Honorable Mention · IEEE VR 2021"
+  media:
+    - { src: social-1, ratio: "1/1", caption: "One distant person", alt: "360° view of a quiet seaside promenade" }
+    - { src: social-2, ratio: "1/1", caption: "Few distant persons", alt: "360° view of a wide square with a few people far away" }
+    - { src: social-3, ratio: "1/1", caption: "Few close persons", alt: "360° view of a city plaza with a few people walking past close by" }
+    - { src: social-4, ratio: "1/1", caption: "Many close persons", alt: "360° view of a crowded street market" }
+    - { src: social-static, ratio: "1/1", caption: "Static game", alt: "A grid puzzle with a timer, played standing still" }
+    - { src: social-dynamic, ratio: "1/1", caption: "Dynamic game", alt: "A game in which the player walks along a path through a park" }
+  papers:
+    - "Influence of interactivity and social environments on user experience and social acceptability in virtual reality"
+    - "The impact of social environment and interaction focus on user experience and social acceptability of an augmented reality game"
+    - "Influence of Interactivity in Shaping User Experience and Social Acceptability of Mobile Augmented Reality"
+
+- slug: personal-space
+  group: applications
+  title: "Personal space in AR"
+  category: "Proxemics · Mobile AR"
+  summary: "How close may a virtual person come? Humanoid characters walked towards participants in mobile AR, female or male, placed either at a predefined or at a dynamic distance. How the character was placed changed the position and width of people's personal-space boundaries and how much they enjoyed the experience; the character's gender affected the inner boundary and social presence."
+  media:
+    - { src: personal-space-distance, ratio: "3/4", caption: "Predefined distance", alt: "In mobile AR, a virtual woman walks across a real office and stops at green and red distance markers" }
+    - { src: personal-space-place, ratio: "3/4", caption: "Dynamic distance", alt: "In mobile AR, a virtual man walks across a real office towards the phone held by the participant" }
+  papers:
+    - "Investigation of personal space perception in augmented reality"
+
+- slug: exergames
+  group: applications
+  title: "Exergames"
+  category: "Health · Motivation"
+  summary: "VR exercise on a rowing machine and in multiplayer games. We study what keeps people moving: the virtual environment, the interface, biofeedback, other players and network delay."
+  media:
+    - { src: exergames, alt: "A participant rowing on an indoor rowing machine while wearing a VR headset" }
+  papers:
+    - "Impact of virtual environments on motivation and engagement during exergames"
+    - "Influence of UI complexity and positioning on user experience during VR exergames"
+    - "Impact of constant visual biofeedback on user experience in virtual reality exergames"
+    - "Influence of network delay in virtual reality multiplayer exergames: Who is actually delayed?"
+
+- slug: reading
+  group: applications
+  title: "Reading in VR"
+  category: "Readability · Comfort"
+  summary: "Participants adjusted text in VR until it was most comfortable to read. This gave practical values for text distance, size and contrast, and eye tracking showed how readability affects the experience."
+  funding: "DATAVR was funded by the German Federal Ministry of Education and Research (BMBF) through the Software Campus programme."
+  media:
+    - { src: reading, ratio: "1/1", alt: "A block of sample text floating in VR, adjusted with a controller" }
+  papers:
+    - "User experience of reading in virtual reality — finding values for text distance, size and contrast"
+    - "Assessing user experience of text readability with eye tracking in virtual reality"
+
+- slug: emotion
+  group: methods
+  title: "Emotion ratings"
+  category: "Continuous vs retrospective"
+  summary: "How should we ask people how they feel in VR: continuously while it happens, or afterwards? We compare rating methods inside the headset, using 360° videos chosen to induce specific emotions."
+  media:
+    - { src: emotion-continuous, ratio: "1/1", caption: "Continuous", alt: "A valence and arousal grid over a 360° coastline video, rated with the controller while watching" }
+    - { src: emotion-retrospective, ratio: "1/1", caption: "Retrospective", alt: "After the 360° video, a questionnaire asks for presence and valence ratings" }
+  papers:
+    - "Comparing emotional states induced by 360 videos via head-mounted display and computer screen"
+    - "Questionnaires embedded in virtual environments: reliability and positioning of rating scales in virtual environments"
