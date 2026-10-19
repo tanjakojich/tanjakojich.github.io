@@ -1,0 +1,130 @@
+<script>
+  /* Search, area/type filters and the "Group by" switch on the publications page.
+     State lives in the URL (?q=&area=&type=&view=) so a filtered view can be shared.
+     Block comments only: GitHub Pages compresses this HTML onto one line. */
+  (function () {
+    var toolbar = document.getElementById('pub-toolbar');
+    if (!toolbar) return;
+    var input = document.getElementById('pub-search');
+    var status = document.getElementById('pub-status');
+    var empty = document.getElementById('pub-empty');
+    var views = { area: document.getElementById('pub-view-area'), year: document.getElementById('pub-view-year') };
+    var chips = Array.prototype.slice.call(toolbar.querySelectorAll('.chip-filter'));
+    var viewButtons = Array.prototype.slice.call(toolbar.querySelectorAll('[data-view]'));
+    var clearButtons = Array.prototype.slice.call(document.querySelectorAll('[data-clear]'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.pub-card'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.pub-section'));
+    var total = views.year.querySelectorAll('.pub-card').length;
+    var state = { q: '', area: [], type: [], view: 'area' };
+
+    function fold(s) {
+      return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    cards.forEach(function (c) {
+      c._search = fold(c.getAttribute('data-search'));
+      c._cats = (c.getAttribute('data-cats') || '').split(' ');
+      c._type = c.getAttribute('data-type');
+    });
+
+    function matches(c, terms) {
+      for (var i = 0; i < terms.length; i++) { if (c._search.indexOf(terms[i]) === -1) return false; }
+      if (state.area.length && !state.area.some(function (a) { return c._cats.indexOf(a) !== -1; })) return false;
+      if (state.type.length && state.type.indexOf(c._type) === -1) return false;
+      return true;
+    }
+
+    function writeUrl() {
+      var p = new URLSearchParams();
+      if (state.q) p.set('q', state.q);
+      if (state.area.length) p.set('area', state.area.join(','));
+      if (state.type.length) p.set('type', state.type.join(','));
+      if (state.view !== 'area') p.set('view', state.view);
+      var qs = p.toString();
+      history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
+    }
+
+    function render() {
+      var terms = fold(state.q).split(/\s+/).filter(Boolean);
+      cards.forEach(function (c) { c.hidden = !matches(c, terms); });
+      sections.forEach(function (s) { s.hidden = !s.querySelector('.pub-card:not([hidden])'); });
+
+      views.area.hidden = state.view !== 'area';
+      views.year.hidden = state.view !== 'year';
+      viewButtons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === state.view)); });
+      chips.forEach(function (b) {
+        var list = state[b.getAttribute('data-filter')];
+        b.setAttribute('aria-pressed', String(list.indexOf(b.getAttribute('data-value')) !== -1));
+      });
+
+      /* Count in the year view: there every paper appears exactly once */
+      var shown = views.year.querySelectorAll('.pub-card:not([hidden])').length;
+      var filtered = state.q || state.area.length || state.type.length;
+      status.textContent = filtered ? shown + ' of ' + total + ' papers' : total + ' papers';
+      empty.hidden = shown > 0;
+      clearButtons.forEach(function (b) { if (b !== empty.querySelector('[data-clear]')) b.hidden = !filtered; });
+      writeUrl();
+    }
+
+    function readUrl() {
+      var p = new URLSearchParams(location.search);
+      var valid = function (name) {
+        return chips.filter(function (b) { return b.getAttribute('data-filter') === name; }).map(function (b) { return b.getAttribute('data-value'); });
+      };
+      var pick = function (name) {
+        var ok = valid(name);
+        return (p.get(name) || '').split(',').filter(function (v) { return ok.indexOf(v) !== -1; });
+      };
+      state.q = p.get('q') || '';
+      state.area = pick('area');
+      state.type = pick('type');
+      state.view = p.get('view') === 'year' ? 'year' : 'area';
+      input.value = state.q;
+    }
+
+    var timer;
+    input.addEventListener('input', function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () { state.q = input.value.trim(); render(); }, 120);
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && input.value) { input.value = ''; state.q = ''; render(); }
+    });
+
+    chips.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var list = state[b.getAttribute('data-filter')];
+        var v = b.getAttribute('data-value');
+        var i = list.indexOf(v);
+        if (i === -1) list.push(v); else list.splice(i, 1);
+        render();
+      });
+    });
+
+    viewButtons.forEach(function (b) {
+      b.addEventListener('click', function () { state.view = b.getAttribute('data-view'); render(); });
+    });
+
+    clearButtons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.q = ''; state.area = []; state.type = [];
+        input.value = '';
+        render();
+        input.focus();
+      });
+    });
+
+    /* "/" jumps to the search box, unless the visitor is already typing somewhere */
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      input.focus();
+    });
+
+    toolbar.hidden = false;
+    readUrl();
+    render();
+  })();
+</script>

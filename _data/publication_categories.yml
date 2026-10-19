@@ -1,9 +1,14 @@
 # Sections of the publications page, in order. id matches "categories" in publications.yml.
+# short: label for the filter chips and the area tag on cards in the year view.
 - id: xr
   title: "Immersive Systems & Extended Reality"
+  short: "XR"
 - id: hci
   title: "HCI, Multimodal Interaction & Avatars"
+  short: "HCI"
 - id: affective
   title: "Affective Computing & Physiological Sensing"
+  short: "Affective"
 - id: qoe
   title: "Quality of Experience & Evaluation Methodology"
+  short: "QoE"

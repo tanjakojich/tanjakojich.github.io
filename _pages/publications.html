@@ -7,45 +7,72 @@ permalink: /publications/
 {% comment %}
   Everything on this page comes from _data/publications.yml (one entry per paper)
   and _data/publication_categories.yml (the sections, in order).
+  Both views (by area, by year) are rendered here; pub-filter-script.html
+  switches between them and applies the search and filters.
 {% endcomment %}
 {% assign pubs = site.data.publications %}
 {% assign years = pubs | map: "year" | sort %}
+{% assign types = "journal,conference,workshop,preprint" | split: "," %}
 
-<p class="page-intro">{{ pubs | size }} papers and preprints from {{ years | first }} to {{ years | last }}, grouped by research area. Citation counts and full records are on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
+<p class="page-intro">{{ pubs | size }} papers and preprints from {{ years | first }} to {{ years | last }}. Search or filter below, and group them by research area or by year. Citation counts and full records are on my <a href="{{ site.author.googlescholar }}">Google Scholar profile</a>.</p>
 
-<nav class="section-nav" aria-label="Research areas">
-  {% for cat in site.data.publication_categories %}
-    {% assign in_cat = pubs | where_exp: "p", "p.categories contains cat.id" %}
-    <a href="#{{ cat.id }}">{{ cat.title }} <span class="section-nav__count">{{ in_cat | size }}</span></a>
-  {% endfor %}
-</nav>
+<div class="pub-toolbar" id="pub-toolbar" hidden>
+  <div class="pub-toolbar__row">
+    <label class="pub-search">
+      <span class="screen-reader-text">Search publications</span>
+      {% include icon.html name="search" %}
+      <input type="search" id="pub-search" placeholder="Search title, author, venue…" autocomplete="off">
+      <kbd class="pub-search__key" aria-hidden="true">/</kbd>
+    </label>
+    <div class="segmented" role="group" aria-label="Group by">
+      <span class="segmented__label">Group by</span>
+      <button type="button" data-view="area" aria-pressed="true">Area</button>
+      <button type="button" data-view="year" aria-pressed="false">Year</button>
+    </div>
+  </div>
+  <div class="pub-toolbar__row pub-toolbar__chips" role="group" aria-label="Filter by area">
+    {% for cat in site.data.publication_categories %}
+      {% assign in_cat = pubs | where_exp: "p", "p.categories contains cat.id" %}
+      <button type="button" class="chip-filter" data-filter="area" data-value="{{ cat.id }}" aria-pressed="false" title="{{ cat.title }}">{{ cat.short }} <span class="section-nav__count">{{ in_cat | size }}</span></button>
+    {% endfor %}
+    <span class="pub-toolbar__divider" aria-hidden="true"></span>
+    {% for t in types %}
+      {% assign of_type = pubs | where: "type", t %}
+      {% if of_type.size > 0 %}
+      <button type="button" class="chip-filter chip-filter--type" data-filter="type" data-value="{{ t }}" aria-pressed="false">{{ t | capitalize }} <span class="section-nav__count">{{ of_type | size }}</span></button>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="pub-toolbar__row pub-toolbar__foot">
+    <p class="pub-toolbar__status" id="pub-status" aria-live="polite">{{ pubs | size }} papers</p>
+    <button type="button" class="pub-toolbar__clear" data-clear hidden>Clear filters</button>
+  </div>
+</div>
 
+<div id="pub-view-area">
 {% for cat in site.data.publication_categories %}
 {% assign in_cat = pubs | where_exp: "p", "p.categories contains cat.id" %}
 <section class="pub-section" id="{{ cat.id }}">
   <h2 class="section-title">{{ cat.title }}</h2>
   <ol class="pub-list">
-    {% for pub in in_cat %}
-    {% if pub.url %}{% assign pub_link = pub.url %}{% elsif pub.doi %}{% assign pub_link = pub.doi | prepend: 'https://doi.org/' %}{% else %}{% assign pub_link = nil %}{% endif %}
-    <li class="pub-card">
-      <span class="pub-card__year">{{ pub.year }}</span>
-      <div class="pub-card__body">
-        <h3 class="pub-card__title">{% if pub_link %}<a href="{{ pub_link }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
-        <p class="pub-card__authors">{{ pub.authors | replace: "Kojić, Tanja", "<strong>Kojić, Tanja</strong>" }}</p>
-        <p class="pub-card__venue">{{ pub.venue }}</p>
-        {% if pub.doi or pub.url or pub.pdf %}
-        <p class="pub-card__links">
-          {% if pub.doi %}<a class="chip chip--link" href="https://doi.org/{{ pub.doi }}">DOI</a>{% endif %}
-          {% if pub.url %}<a class="chip chip--link" href="{{ pub.url }}">{% if pub.url contains 'arxiv.org' %}arXiv{% else %}Link{% endif %}</a>{% endif %}
-          {% if pub.pdf %}<a class="chip chip--link" href="{{ pub.pdf | relative_url }}">PDF</a>{% endif %}
-        </p>
-        {% endif %}
-      </div>
-      <span class="pub-badge badge-{{ pub.type }}">{{ pub.type | capitalize }}</span>
-    </li>
-    {% endfor %}
+    {% for pub in in_cat %}{% include pub-card.html pub=pub %}{% endfor %}
   </ol>
 </section>
 {% endfor %}
+</div>
 
-{% include section-nav-script.html %}
+<div id="pub-view-year" hidden>
+{% assign by_year = pubs | group_by: "year" | sort: "name" | reverse %}
+{% for group in by_year %}
+<section class="pub-section" id="y{{ group.name }}">
+  <h2 class="section-title">{{ group.name }} <span class="section-title__count">{{ group.items | size }}</span></h2>
+  <ol class="pub-list">
+    {% for pub in group.items %}{% include pub-card.html pub=pub %}{% endfor %}
+  </ol>
+</section>
+{% endfor %}
+</div>
+
+<p class="pub-empty" id="pub-empty" hidden>No papers match your search. <button type="button" class="pub-toolbar__clear" data-clear>Clear filters</button></p>
+
+{% include pub-filter-script.html %}

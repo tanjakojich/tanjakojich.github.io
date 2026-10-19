@@ -1,0 +1,26 @@
+{% comment %}
+  One publication card. Pass pub=... ; used by both views of the publications page.
+  The data-* attributes feed the search and filters in pub-filter-script.html.
+{% endcomment %}
+{% assign pub = include.pub %}
+{% if pub.url %}{% assign pub_link = pub.url %}{% elsif pub.doi %}{% assign pub_link = pub.doi | prepend: 'https://doi.org/' %}{% else %}{% assign pub_link = nil %}{% endif %}
+{% capture pub_search %}{{ pub.title }} {{ pub.authors }} {{ pub.venue }} {{ pub.year }}{% endcapture %}
+<li class="pub-card" data-cats="{{ pub.categories | join: ' ' }}" data-type="{{ pub.type }}" data-search="{{ pub_search | downcase | escape }}">
+  <span class="pub-card__year">{{ pub.year }}</span>
+  <div class="pub-card__body">
+    <h3 class="pub-card__title">{% if pub_link %}<a href="{{ pub_link }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+    <p class="pub-card__authors">{{ pub.authors | replace: "Kojić, Tanja", "<strong>Kojić, Tanja</strong>" }}</p>
+    <p class="pub-card__venue">{{ pub.venue }}</p>
+    {% if pub.doi or pub.url or pub.pdf %}
+    <p class="pub-card__links">
+      {% if pub.doi %}<a class="chip chip--link" href="https://doi.org/{{ pub.doi }}">DOI</a>{% endif %}
+      {% if pub.url %}<a class="chip chip--link" href="{{ pub.url }}">{% if pub.url contains 'arxiv.org' %}arXiv{% else %}Link{% endif %}</a>{% endif %}
+      {% if pub.pdf %}<a class="chip chip--link" href="{{ pub.pdf | relative_url }}">PDF</a>{% endif %}
+    </p>
+    {% endif %}
+  </div>
+  <span class="pub-card__meta">
+    {% for cat in site.data.publication_categories %}{% if pub.categories contains cat.id %}<span class="pub-tag">{{ cat.short }}</span>{% endif %}{% endfor %}
+    <span class="pub-badge badge-{{ pub.type }}">{{ pub.type | capitalize }}</span>
+  </span>
+</li>
