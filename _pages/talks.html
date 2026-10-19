@@ -1,3 +1,16 @@
+---
+layout: archive
+title: "Talks"
+description: "Keynotes, invited talks, panels, podcasts and science slams by Dr. Tanja Kojić on user experience in extended reality."
+permalink: /talks/
+redirect_from:
+  - /speaking-teaching/
+  - /speaking/
+---
+{% comment %}
+  Talks come from _data/talks.yml.
+{% endcomment %}
+
 <p class="page-intro">I enjoy sharing research beyond papers, from keynotes to podcasts and science slams. Below you'll find my invited talks and public appearances.</p>
 
 {% assign keynotes = site.data.talks | where: "type", "keynote" %}
@@ -11,7 +24,7 @@
 {% assign media_outreach = media | concat: outreach | sort: "sort_date" | reverse %}
 
 {% if keynote_invited.size > 0 %}
-<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="mic" %}</span> Keynotes & Invited Talks</h3>
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="mic" %}</span> Keynotes & Invited Talks</h2>
 
 {% for talk in keynote_invited %}
 <div class="talk-card">
@@ -47,7 +60,7 @@
 {% endif %}
 
 {% if conference.size > 0 %}
-<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="presentation" %}</span> Conference Talks</h3>
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="presentation" %}</span> Conference Talks</h2>
 
 {% for talk in conference %}
 <div class="talk-card">
@@ -81,7 +94,7 @@
 {% endif %}
 
 {% if media_outreach.size > 0 %}
-<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="podcast" %}</span> Media & Outreach</h3>
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="podcast" %}</span> Media & Outreach</h2>
 
 {% for talk in media_outreach %}
 <div class="talk-card">

@@ -1,6 +1,13 @@
+---
+layout: archive
+title: "Teaching & Mentoring"
+description: "Courses, guest lectures, study projects and thesis supervision by Dr. Tanja Kojić at TU Berlin."
+permalink: /teaching/
+---
+
 <p class="page-intro">In my courses, students learn by doing: they build interactive systems and test them with real users. Below you'll find the courses, study projects, and theses I have taught and supervised.</p>
 
-<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="book" %}</span> Courses</h3>
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="book" %}</span> Courses</h2>
 
 <div class="course-card">
   <div class="course-card-top">
@@ -91,7 +98,7 @@
   </div>
 </div>
 
-<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="folder" %}</span> Study Projects</h3>
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="folder" %}</span> Study Projects</h2>
 
 <div class="course-card">
   <div class="course-card-top">
@@ -154,14 +161,14 @@
   <div class="course-venue">Technical University Berlin, Faculty of Electrical Engineering and Computer Science</div>
 </div>
 
-<h3 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="graduation" %}</span> Student Supervision</h3>
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="graduation" %}</span> Student Supervision</h2>
 
 <div class="supervision-card">
-  <h4>Thesis &amp; Project Mentoring</h4>
+  <h3>Thesis &amp; Project Mentoring</h3>
   <p>I supervise Bachelor's and Master's theses at the Quality and Usability Lab, mainly on user experience in extended reality, multimodal interaction, and user-centred evaluation.</p>
   <div class="supervision-columns">
     <div class="supervision-col">
-      <h5>Focus Areas</h5>
+      <h4>Focus Areas</h4>
       <ul>
         <li>User experience in VR, AR and MR</li>
         <li>Multimodal interaction (hand tracking, voice, passthrough)</li>
@@ -171,7 +178,7 @@
       </ul>
     </div>
     <div class="supervision-col">
-      <h5>Project Types</h5>
+      <h4>Project Types</h4>
       <ul>
         <li>Bachelor's theses</li>
         <li>Master's theses</li>
@@ -181,3 +188,24 @@
     </div>
   </div>
 </div>
+
+{% if site.data.student_projects.size > 0 %}
+<h2 class="entry-heading"><span class="entry-heading__icon" aria-hidden="true">{% include icon.html name="film" %}</span> Student Work</h2>
+
+<div class="student-gallery">
+  {% for clip in site.data.student_projects %}
+  <article class="student-gallery__card" data-reveal>
+    {% if clip.src %}
+    {% include research-media.html clip=clip dir="teaching" %}
+    {% else %}
+    <div class="student-gallery__placeholder" style="aspect-ratio: {{ clip.ratio | default: '16/9' }}">Clip coming soon</div>
+    {% endif %}
+    <div class="student-gallery__meta">
+      <span class="course-title">{{ clip.title }}</span>
+      {% if clip.year %}<span class="study-project-year">{{ clip.year }}</span>{% endif %}
+    </div>
+    {% if clip.context %}<div class="course-venue">{{ clip.context }}</div>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+{% endif %}

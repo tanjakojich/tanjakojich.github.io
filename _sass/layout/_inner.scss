@@ -573,7 +573,7 @@
 .supervision-card {
   gap: 10px;
 
-  h4 {
+  h3 {
     margin: 0;
     font-family: $display-font;
     font-size: 1.0625rem;
@@ -588,7 +588,7 @@
     color: var(--text-secondary);
   }
 
-  h5 {
+  h4 {
     margin: 0 0 6px;
     font-family: $mono-font;
     font-size: 0.6875rem;
@@ -675,4 +675,48 @@
     gap: 10px;
     margin-top: 8px;
   }
+}
+
+/* Student work gallery --------------------------------------------------- */
+
+.student-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+
+  @include breakpoint($small) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  &__card {
+    @include entry-card;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 12px 16px;
+
+    .research-media__item { margin-bottom: 6px; }
+  }
+
+  &__placeholder {
+    display: grid;
+    place-items: center;
+    margin-bottom: 6px;
+    border: 1px dashed var(--glass-line);
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 30% 30%, var(--media-blue), transparent 60%),
+      var(--media);
+    font-family: $mono-font;
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+  }
+
+  &__meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 6px;
+  }
+
+  .course-venue { padding: 0 6px; }
 }

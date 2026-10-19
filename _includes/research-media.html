@@ -1,8 +1,10 @@
 {% comment %}
   One looping project clip: a muted <video> that theme-nav.js plays while it
-  is on screen. Pass clip= an entry from a project's media list.
+  is on screen. Pass clip= an entry from a project's media list, and
+  dir= the folder under /images/ (default: research).
 {% endcomment %}
-{% assign base = '/images/research/' | append: include.clip.src | relative_url %}
+{% assign dir = include.dir | default: 'research' %}
+{% assign base = '/images/' | append: dir | append: '/' | append: include.clip.src | relative_url %}
 <figure class="research-media__item">
   <video class="research-media__video" style="aspect-ratio: {{ include.clip.ratio | default: '16/9' }}" muted loop playsinline preload="none" poster="{{ base }}.jpg" aria-label="{{ include.clip.alt | escape }}" data-autoplay>
     <source src="{{ base }}.mp4" type="video/mp4">

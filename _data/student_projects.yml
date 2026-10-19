@@ -1,0 +1,38 @@
+# Student project clips, shown in the gallery at the bottom of /teaching/.
+# Files go in /images/teaching/: <src>.mp4 plus a <src>.jpg poster.
+# Clips match /images/research/: H.264, no audio, ~10–12 s, 600x338, 20 fps.
+# Optional per clip: ratio ("16/9" default, "1/1", "4/3", …).
+# An entry without src shows a "clip coming soon" placeholder.
+# The gallery is hidden when this list is empty.
+#
+# Example:
+# - src: yoga-vr
+#   title: "Yoga Reimagined"
+#   context: "Study Project Quality & Usability"
+#   year: "2024"
+#   alt: "A student practising a yoga pose next to a virtual instructor in VR"
+
+
+- src: michael-recycles
+  title: "Michael Recycles"
+  alt: "A player in a VR headset steps between coloured lanes to sort waste into the right bin while running past the Eiffel Tower"
+
+- src: eggsplosion
+  title: "Eggsplosion"
+  alt: "A player in a VR headset fires at targets in a bright pink and purple virtual kitchen"
+
+- src: skate-berlin
+  title: "Skate Berlin"
+  alt: "A player pushes off with one leg on the floor to skate through a virtual Berlin street"
+
+- src: punch-out
+  title: "Punch-Out!!"
+  alt: "A player in a VR headset punches incoming objects on a night-time city road"
+
+- src: like-a-river
+  title: "Like a River"
+  alt: "A player sways and ducks to hit targets on a rhythm track set against a starry sky"
+
+- src: bar-of-phantom
+  title: "Bar of Phantom"
+  alt: "A player in a VR headset serves drinks to ghost customers in a neon-lit virtual bar"
