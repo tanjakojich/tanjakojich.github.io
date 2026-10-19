@@ -13,12 +13,21 @@
   url: "https://arxiv.org/abs/2602.23497"
   latest: true
 
+- title: "Evaluating the Impact of Distractions and Spatial Constraints in Public XR"
+  authors: "Shumeliuk, Arina; Warsinke, Maximilian; Kojić, Tanja; Möller, Sebastian; Voigt-Antons, Jan-Niklas; Vergari, Maurizio"
+  year: 2026
+  venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
+  type: workshop
+  categories: [xr]
+  doi: "10.1109/vrw70859.2026.00091"
+
 - title: "Comparing pass-through quality of mixed reality devices: A user experience study during real-world tasks"
   authors: "Vona, Francesco; Schorlemmer, Julia; Stern, Michael; Ashrafi, Navid; Vergari, Maurizio; Kojić, Tanja; Voigt-Antons, Jan-Niklas"
   year: 2025
   venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
   type: workshop
   categories: [xr]
+  doi: "10.1109/vrw66409.2025.00362"
 
 - title: "Integrating Virtual and Augmented Reality Into Public Education: Opportunities and Challenges in Language Learning"
   authors: "Kojić, Tanja; Vergari, Maurizio; Benta, Giulia-Marielena; Krupinski, Joy; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -26,6 +35,7 @@
   venue: "International Conference on Human-Computer Interaction"
   type: conference
   categories: [xr]
+  doi: "10.1007/978-3-031-93715-6_9"
 
 - title: "Investigating the Effect of Prior Exposure and Fidelity on Quality and Realism Perception of VR Digital Twins"
   authors: "Warsinke, Maximilian; Vergari, Maurizio; Kojić, Tanja; Nikulin, Daniel; Möller, Sebastian"
@@ -41,6 +51,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [xr]
+  doi: "10.1109/qomex65720.2025.11219977"
 
 - title: "The Influence of Extended Reality and Virtual Characters' Embodiment Levels on User Experience in Well-Being Activities"
   authors: "Kojić, Tanja; Vergari, Maurizio; Podratz, Marco; Möller, Sebastian"
@@ -48,6 +59,7 @@
   venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
   type: workshop
   categories: [xr]
+  doi: "10.1109/vrw62533.2024.00224"
 
 - title: "Working with mixed reality in public: Effects of virtual display layouts on productivity, feeling of safety, and social acceptability"
   authors: "Kaeder, Janne; Vergari, Maurizio; Biener, Verena; Kojić, Tanja; Grubert, Jens; Möller, Sebastian; Antons, Jan-Niklas Voigt"
@@ -55,6 +67,31 @@
   venue: "IEEE International Symposium on Mixed and Augmented Reality (ISMAR)"
   type: conference
   categories: [xr]
+  doi: "10.1109/ismar62088.2024.00089"
+
+- title: "Investigating the impact of virtual element misalignment in collaborative Augmented Reality experiences"
+  authors: "Vona, Francesco; Stern, Michael; Ashrafi, Navid; Kojić, Tanja; Hinzmann, Sina; Grieshammer, David; Voigt-Antons, Jan-Niklas"
+  year: 2024
+  venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
+  type: conference
+  categories: [xr]
+  doi: "10.1109/qomex61742.2024.10598298"
+
+- title: "Exploring augmented table setup and lighting customization in a simulated restaurant to improve the user experience"
+  authors: "Motowilowa, Jana; Vergari, Maurizio; Kojić, Tanja; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2024
+  venue: "IEEE International Symposium on Multimedia (ISM)"
+  type: conference
+  categories: [xr]
+  doi: "10.1109/ism63611.2024.00052"
+
+- title: "Dishonesty Tendencies in Testing Scenarios Among Students with Virtual Reality and Computer-Mediated Technology"
+  authors: "Kojić, Tanja; Dovhalevska, Alina; Vergari, Maurizio; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2024
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [xr]
+  doi: "10.1007/978-3-031-61953-3_14"
 
 - title: "The future of the performing arts with extended reality"
   authors: "Kojić, Tanja; Srnec Hamer, Iva; Vergari, Maurizio; Möller, Sebastian"
@@ -62,6 +99,7 @@
   venue: "International Conference on Human-Computer Interaction"
   type: conference
   categories: [xr]
+  doi: "10.1007/978-3-031-35998-9_58"
 
 - title: "Exploring users' sense of safety in public using an Augmented Reality application"
   authors: "Vergari, Maurizio; Kojić, Tanja; Bertges, Nicole Stefanie; Vona, Francesco; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -69,6 +107,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [xr]
+  doi: "10.1109/qomex58391.2023.10178675"
 
 - title: "Effects of user factors on user experience in virtual reality: age, gender, and VR experience as influencing factors for VR exergames"
   authors: "Kojić, Tanja; Spang, Robert; Vergari, Maurizio; Meier, Luis; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -76,6 +115,7 @@
   venue: "Quality and User Experience"
   type: journal
   categories: [xr]
+  doi: "10.1007/s41233-023-00056-5"
 
 - title: "Investigation of personal space perception in augmented reality"
   authors: "Vergari, Maurizio; Spang, Robert; Kojić, Tanja; Hesse, Britta; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -85,12 +125,45 @@
   categories: [xr]
   doi: "10.1109/QoMEX55416.2022.9900887"
 
+- title: "Towards Improvement of UX Using Gamification for Public Artistic and Historical Artifacts in AR"
+  authors: "Vergari, Maurizio; Kojić, Tanja; Koleva, Katerina Georgieva; Hillmann, Stefan; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2022
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [xr]
+  doi: "10.1007/978-3-031-06015-1_10"
+
+- title: "Virtual Reality in Support of Nuclear Disarmament: Interactivity, Curveballs, and Gameplay"
+  authors: "Kojić, Tanja; Moric, Igor; Pailhès, Alice; Patton, Tamara; Voigt-Antons, Jan-Niklas; Glaser, Alexander"
+  year: 2021
+  venue: "INMM/ESARDA Joint Annual Meeting"
+  type: conference
+  categories: [xr]
+  url: "https://resources.inmm.org/annual-meeting-proceedings/virtual-reality-support-nuclear-disarmament-interactivity-curveballs-and"
+
+- title: "Influence of Visualisation Design of Data Streams on User Experience in Virtual Reality"
+  authors: "Kojić, Tanja; Vergari, Maurizio; Thangaraj, Rahul; Braune, Marco; Voigt-Antons, Jan-Niklas"
+  year: 2021
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [xr]
+  doi: "10.1007/978-3-030-78642-7_36"
+
 - title: "QUALINET white paper on definitions of immersive media experience (IMEx)"
   authors: "Perkis, Andrew; Timmerer, Christian; Baraković, Sabina; Husić, Jasmina Baraković; Bech, Søren; Bosse, Sebastian; Botev, Jean; Brunnström, Kjell; Cruz, Luis; De Moor, Katrien; et al."
   year: 2020
   venue: "arXiv preprint arXiv:2007.07032"
   type: preprint
   categories: [xr]
+  url: "https://arxiv.org/abs/2007.07032"
+
+- title: "Exploring visualisations for financial statements in virtual reality"
+  authors: "Kojić, Tanja; Ashipala, Sandra; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2020
+  venue: "IEEE International Conference on Artificial Intelligence and Virtual Reality (AIVR)"
+  type: conference
+  categories: [xr]
+  doi: "10.1109/aivr50618.2020.00018"
 
 - title: "Influence of network delay in virtual reality multiplayer exergames: Who is actually delayed?"
   authors: "Kojić, Tanja; Schmidt, Steven; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -98,6 +171,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [xr]
+  doi: "10.1109/qomex.2019.8743342"
 
 - title: "Influence of virtual environments and conversations on user engagement during multiplayer exergames"
   authors: "Kojić, Tanja; Voigt-Antons, Jan-Niklas; Schmidt, Steven; Tetzlaff, Lukas; Kortowski, Bruno; Sirotina, Uliana; Möller, Sebastian"
@@ -105,6 +179,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [xr]
+  doi: "10.1109/qomex.2018.8463370"
 
 - title: "Impact of virtual environments on motivation and engagement during exergames"
   authors: "Schmidt, Steven; Ehrenbrink, Patrick; Weiss, Benjamin; Voigt-Antons, Jan-Niklas; Kojić, Tanja; Johnston, Andrew; Möller, Sebastian"
@@ -112,6 +187,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [xr]
+  doi: "10.1109/qomex.2018.8463389"
 
 - title: "Understanding the Interplay Between User Experience and Performance in Multimodal Virtual Reality Interaction Across Input Modalities and Perspectives"
   authors: "Nguyen, Nguyen Huong; Zou, You; Vergari, Maurizio; Warsinke, Maximilian; Möller, Sebastian; Kojić, Tanja"
@@ -119,6 +195,7 @@
   venue: "Proceedings of the 18th International Workshop on Immersive Mixed and Virtual Environment Systems"
   type: workshop
   categories: [hci]
+  doi: "10.1145/3798090.3799681"
 
 - title: "Influence of Interactivity in Shaping User Experience and Social Acceptance of Mobile XR"
   authors: "Kojić, Tanja; Vergari, Maurizio; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -126,6 +203,7 @@
   venue: "arXiv preprint arXiv:2603.08973"
   type: preprint
   categories: [hci]
+  url: "https://arxiv.org/abs/2603.08973"
 
 - title: "SIC-XR: Workshop on Social Interaction and Collaboration in eXtended Reality"
   authors: "Cantone, Andrea Antonio; Cesar, Pablo; Kojić, Tanja; Vitiello, Giuliana"
@@ -133,6 +211,7 @@
   venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
   type: workshop
   categories: [hci]
+  doi: "10.1109/vrw66409.2025.00112"
 
 - title: "Influence of Interactivity in Shaping User Experience and Social Acceptability of Mobile Augmented Reality"
   authors: "Kojić, Tanja; Vergari, Maurizio; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -140,6 +219,7 @@
   venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
   type: workshop
   categories: [hci]
+  doi: "10.1109/vrw66409.2025.00114"
 
 - title: "Evaluation of a Sign Language Avatar on Comprehensibility, User Experience & Acceptability"
   authors: "Wasserroth, Fenya; Avramidis, Eleftherios; Czehmann, Vera; Kojić, Tanja; Nunnari, Fabrizio; Möller, Sebastian"
@@ -147,6 +227,7 @@
   venue: "Adjunct Proceedings of the 25th ACM International Conference on Intelligent Virtual Agents"
   type: conference
   categories: [hci]
+  doi: "10.1145/3742886.3756719"
 
 - title: "Finding my way: Influence of different audio augmented reality navigation cues on user experience and subjective usefulness"
   authors: "Hinzmann, Sina; Vona, Francesco; Henning, Juliane; Amer, Mohamed; Abdellatif, Omar; Kojić, Tanja; Voigt-Antons, Jan-Niklas"
@@ -154,6 +235,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [hci]
+  doi: "10.1109/qomex65720.2025.11219995"
 
 - title: "Assessing the Influence of Visual Factors in Virtual Environments on Raycasting Precision and Accuracy"
   authors: "Nikulin, Daniel; Warsinke, Maximilian; Vergari, Maurizio; Möller, Sebastian; Kojić, Tanja"
@@ -161,6 +243,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [hci]
+  doi: "10.1109/qomex65720.2025.11219912"
 
 - title: "Multimodal User Experience in Extended Reality: Exploring Hand Tracking, Voice, and Passthrough Interactions"
   authors: "Kojić, Tanja; Vergari, Maurizio; Warsinke, Maximilian; Ali, Danish; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -168,6 +251,7 @@
   venue: "Proceedings of the 17th International Workshop on IMmersive Mixed and Virtual Environment Systems"
   type: workshop
   categories: [hci]
+  doi: "10.1145/3712677.3720459"
 
 - title: "Experiencing dynamic weight changes in virtual reality through pseudo-haptics and vibrotactile feedback"
   authors: "Stellmacher, Carolin; Pujianto, Feri Irsanto; Kojić, Tanja; Voigt-Antons, Jan-Niklas; Schöning, Johannes"
@@ -175,6 +259,7 @@
   venue: "Proceedings of the CHI Conference on Human Factors in Computing Systems"
   type: conference
   categories: [hci]
+  doi: "10.1145/3613904.3642552"
 
 - title: "Influence of Gameplay Duration, Hand Tracking, and Controller Based Control Methods on UX in VR"
   authors: "Kojić, Tanja; Vergari, Maurizio; Knuth, Simon; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -182,6 +267,7 @@
   venue: "Proceedings of the 16th International Workshop on Immersive Mixed and Virtual Environment Systems"
   type: workshop
   categories: [hci]
+  doi: "10.1145/3652212.3652222"
 
 - title: "The impact of social environment and interaction focus on user experience and social acceptability of an augmented reality game"
   authors: "Cocchia, Lorenzo; Vergari, Maurizio; Kojić, Tanja; Vona, Francesco; Möller, Sebastian; Garzotto, Franca; Voigt-Antons, Jan-Niklas"
@@ -189,6 +275,23 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [hci]
+  doi: "10.1109/qomex61742.2024.10598279"
+
+- title: "Digital eyes: social implications of XR EyeSight"
+  authors: "Vergari, Maurizio; Kojić, Tanja; Wardah, Wafaa; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas; Spang, Robert"
+  year: 2024
+  venue: "Proceedings of the ACM Symposium on Virtual Reality Software and Technology"
+  type: conference
+  categories: [hci]
+  doi: "10.1145/3641825.3689526"
+
+- title: "Enhancing job interview preparation through immersive experiences using photorealistic, AI-powered metahuman avatars"
+  authors: "Ashrafi, Navid; Vona, Francesco; Ringsdorf, Carina; Hertel, Christian; Toni, Luca; Kailer, Sarina; Bartels, Alice; Kojić, Tanja; Voigt-Antons, Jan-Niklas"
+  year: 2024
+  venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
+  type: conference
+  categories: [hci]
+  doi: "10.1109/ismar-adjunct64951.2024.00083"
 
 - title: "Influence of interactivity and social environments on user experience and social acceptability in virtual reality"
   authors: "Vergari, Maurizio; Kojić, Tanja; Vona, Francesco; Garzotto, Franca; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -196,6 +299,15 @@
   venue: "IEEE Virtual Reality and 3D User Interfaces (VR)"
   type: conference
   categories: [hci]
+  doi: "10.1109/vr50410.2021.00096"
+
+- title: "User Experience of Connected Services in Cars"
+  authors: "Ganser, Kathrin; Kojić, Tanja; Voigt-Antons, Jan-Niklas"
+  year: 2021
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [hci]
+  doi: "10.1007/978-3-030-78645-8_29"
 
 - title: "Influence of hand tracking as a way of interaction in virtual reality on user experience"
   authors: "Voigt-Antons, Jan-Niklas; Kojić, Tanja; Ali, Danish; Möller, Sebastian"
@@ -203,6 +315,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [hci]
+  doi: "10.1109/qomex48832.2020.9123085"
 
 - title: "Influence of UI complexity and positioning on user experience during VR exergames"
   authors: "Kojić, Tanja; Sirotina, Uliana; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -210,13 +323,15 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [hci]
+  doi: "10.1109/qomex.2019.8743273"
 
-- title: "Signals of stress: Using biosignals to assess fatigue in video conferencing"
+- title: "Signals of strain: Using biosignals to assess fatigue in video conferencing"
   authors: "Pagel, Lucy V; Kojić, Tanja; Schmitt, Vera; Wardah, Wafaa; Harnisch, Philipp L; Möller, Sebastian; Spang, Robert P"
   year: 2025
   venue: "International Conference on Human-Computer Interaction"
   type: conference
   categories: [affective]
+  doi: "10.1007/978-3-031-93718-7_8"
 
 - title: "Emotionally adaptive virtual health assistants for enhanced social presence and trust"
   authors: "Ashrafi, Navid; Schorlemmer, Julia; Vona, Francesco; Kojić, Tanja; Hillmann, Stefan; Braytee, Ali; Wang, Yu-Kai; Kocaballi, Baki; Moreira, Catarina; Möller, Sebastian"
@@ -224,6 +339,7 @@
   venue: "Adjunct Proceedings of the 25th ACM International Conference on Intelligent Virtual Agents"
   type: conference
   categories: [affective]
+  doi: "10.1145/3742886.3756698"
 
 - title: "Augmented Reality in the Treatment of Stress and Anxiety Disorders: A Literature Synthesis"
   authors: "Vona, Francesco; Kuhlencord, Merle; Fox, Janosch; Kojić, Tanja; Shiban, Youssef; Voigt-Antons, Jan-Niklas"
@@ -231,6 +347,7 @@
   venue: "Adjunct Proceedings of the 25th ACM International Conference on Intelligent Virtual Agents"
   type: conference
   categories: [affective]
+  doi: "10.1145/3742886.3756697"
 
 - title: "Designing Adaptive Virtual Health Assistants Using Cognitive and Emotional State Predictions"
   authors: "Ashrafi, Navid; Schorlemmer, Julia; Vona, Francesco; Kojić, Tanja; Hillmann, Stefan; Braytee, Ali; Wang, Yu-Kai; Kocaballi, A Baki; Moreira, Catarina; Möller, Sebastian"
@@ -238,6 +355,7 @@
   venue: "International Conference on Human-Computer Interaction"
   type: conference
   categories: [affective]
+  doi: "10.1007/978-3-032-12764-8_22"
 
 - title: "VR cloud gaming UX: Exploring the impact of network quality on emotion, presence, game experience and cybersickness"
   authors: "Warsinke, Maximilian; Kojić, Tanja; Vergari, Maurizio; Voigt-Antons, Jan-Niklas; Möller, Sebastian"
@@ -245,6 +363,7 @@
   venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)"
   type: conference
   categories: [affective]
+  doi: "10.1109/ismar-adjunct64951.2024.00166"
 
 - title: "Influence of personality and communication behavior of a conversational agent on user experience and social presence in augmented reality"
   authors: "Koleva, Katerina; Vergari, Maurizio; Kojić, Tanja; Moeller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -252,6 +371,23 @@
   venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)"
   type: workshop
   categories: [affective]
+  doi: "10.1109/vrw62533.2024.00261"
+
+- title: "Comparing continuous and retrospective emotion ratings in remote VR study"
+  authors: "Warsinke, Maximilian; Kojić, Tanja; Vergari, Maurizio; Spang, Robert; Voigt-Antons, Jan-Niklas; Möller, Sebastian"
+  year: 2024
+  venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
+  type: conference
+  categories: [affective]
+  doi: "10.1109/qomex61742.2024.10598301"
+
+- title: "Embedding self-assessment manikins in mobile augmented reality applications"
+  authors: "Lübbing, Leonie; Kojić, Tanja; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2023
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [affective]
+  doi: "10.1007/978-3-031-35634-6_25"
 
 - title: "Don't worry be happy — using virtual environments to induce emotional states measured by subjective scales and heart rate parameters"
   authors: "Voigt-Antons, Jan-Niklas; Spang, Robert; Kojić, Tanja; Meier, Luis; Vergari, Maurizio; Möller, Sebastian"
@@ -259,6 +395,15 @@
   venue: "IEEE Virtual Reality and 3D User Interfaces (VR)"
   type: conference
   categories: [affective]
+  doi: "10.1109/vr50410.2021.00094"
+
+- title: "Automatic Recognition of Experienced Emotional State from Body Movement"
+  authors: "Voigt-Antons, Jan-Niklas; Devaikin, Petr; Kojić, Tanja"
+  year: 2021
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [affective]
+  doi: "10.1007/978-3-030-78462-1_49"
 
 - title: "Impact of tactile and visual feedback on breathing rhythm and user experience in VR exergaming"
   authors: "Greinacher, Robert; Kojić, Tanja; Meier, Luis; Parameshappa, Rudresha Gulaganjihalli; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -266,6 +411,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [affective]
+  doi: "10.1109/qomex48832.2020.9123141"
 
 - title: "Comparing emotional states induced by 360 videos via head-mounted display and computer screen"
   authors: "Voigt-Antons, Jan-Niklas; Lehtonen, Eero; Palacios, Andres Pinilla; Ali, Danish; Kojić, Tanja; Möller, Sebastian"
@@ -273,6 +419,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [affective]
+  doi: "10.1109/qomex48832.2020.9123125"
 
 - title: "Development and validation of pictographic scales for rapid assessment of affective states in virtual reality"
   authors: "Krüger, Christian; Kojić, Tanja; Meier, Luis; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -280,6 +427,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [affective]
+  doi: "10.1109/qomex48832.2020.9123100"
 
 - title: "Impact of constant visual biofeedback on user experience in virtual reality exergames"
   authors: "Kojić, Tanja; Nugyen, Lan Thao; Voigt-Antons, Jan-Niklas"
@@ -287,6 +435,23 @@
   venue: "IEEE International Symposium on Multimedia (ISM)"
   type: conference
   categories: [affective]
+  doi: "10.1109/ism46123.2019.00068"
+
+- title: "The QoE of Photorealistic Avatar Communication: A Benchmark Against Video Conferencing"
+  authors: "Brag, Adrian B; Ankel, Louis; George, Ceenu; Kojić, Tanja; Möller, Sebastian; Spang, Robert P"
+  year: 2026
+  venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
+  type: conference
+  categories: [qoe]
+  doi: "10.1109/qomex69967.2026.11618367"
+
+- title: "3D Gaussian Splatting and Mesh-Based Digital Twins: An Exploratory Study for Virtual Reality Tourism"
+  authors: "Warsinke, Maximilian; Vona, Francesco; Islam, Abm Tariqul; Kojić, Tanja; Voigt-Antons, Jan-Niklas; Möller, Sebastian"
+  year: 2026
+  venue: "arXiv preprint arXiv:2608.01969"
+  type: preprint
+  categories: [qoe]
+  url: "https://arxiv.org/abs/2608.01969"
 
 - title: "User-centric evaluation methods for digital twin applications in extended reality"
   authors: "Vona, Francesco; Warsinke, Maximilian; Kojić, Tanja; Voigt-Antons, Jan-Niklas; Möller, Sebastian"
@@ -294,6 +459,7 @@
   venue: "IEEE International Conference on Artificial Intelligence and eXtended and Virtual Reality (AIxVR)"
   type: conference
   categories: [qoe]
+  doi: "10.1109/aixvr63409.2025.00028"
 
 - title: "Digital twins for extended reality tourism: user experience evaluation across user groups"
   authors: "Warsinke, Maximilian; Vona, Francesco; Kojić, Tanja; Voigt-Antons, Jan-Niklas; Möller, Sebastian"
@@ -301,6 +467,31 @@
   venue: "International Conference on Extended Reality"
   type: conference
   categories: [qoe]
+  doi: "10.1007/978-3-031-97769-5_3"
+
+- title: "The Influence of the Level of Detail and Interactivity of 3D Elements on UX in XR Applications"
+  authors: "Vergari, Maurizio; Warsinke, Maximilian; Kojić, Tanja; Möller, Sebastian; Voigt-Antons, Jan-Niklas; Abboud, Osama; Xiao, Xun"
+  year: 2024
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [qoe]
+  doi: "10.1007/978-3-031-61041-7_19"
+
+- title: "Optimizing XR User Experiences Through Network-Based Asset Bundles"
+  authors: "Vergari, Maurizio; Kojić, Tanja; Warsinke, Maximilian; Möller, Sebastian; Voigt-Antons, Jan-Niklas; Abboud, Osama; Xiao, Xun"
+  year: 2024
+  venue: "International Conference on Human-Computer Interaction"
+  type: conference
+  categories: [qoe]
+  doi: "10.1007/978-3-031-61044-8_8"
+
+- title: "An investigation of the influence of ambient noise on user experience in virtual reality"
+  authors: "Kojić, Tanja; Vergari, Maurizio; Vona, Francesco; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
+  year: 2023
+  venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
+  type: conference
+  categories: [qoe]
+  doi: "10.1109/qomex58391.2023.10178532"
 
 - title: "Assessing user experience of text readability with eye tracking in virtual reality"
   authors: "Kojić, Tanja; Vergari, Maurizio; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -308,6 +499,7 @@
   venue: "International Conference on Human-Computer Interaction"
   type: conference
   categories: [qoe]
+  doi: "10.1007/978-3-031-05939-1_13"
 
 - title: "User experience of reading in virtual reality — finding values for text distance, size and contrast"
   authors: "Kojić, Tanja; Ali, Danish; Greinacher, Robert; Möller, Sebastian; Voigt-Antons, Jan-Niklas"
@@ -315,6 +507,7 @@
   venue: "IEEE Conference on Quality of Multimedia Experience (QoMEX)"
   type: conference
   categories: [qoe]
+  doi: "10.1109/qomex48832.2020.9123091"
 
 - title: "Questionnaires embedded in virtual environments: reliability and positioning of rating scales in virtual environments"
   authors: "Regal, Georg; Voigt-Antons, Jan-Niklas; Schmidt, Steven; Schrammel, Johann; Kojić, Tanja; Tscheligi, Manfred; Möller, Sebastian"
@@ -322,3 +515,4 @@
   venue: "Quality and User Experience"
   type: journal
   categories: [qoe]
+  doi: "10.1007/s41233-019-0029-1"
