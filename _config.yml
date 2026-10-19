@@ -169,6 +169,14 @@ social:
     - "https://www.linkedin.com/in/tanjakojich"
   job_title: "Senior Scientist"
   affiliation: "Quality and Usability Lab, Technische Universität Berlin"
+  affiliation_url: "https://www.tu.berlin/en/qu"
+  honorific_prefix: "Dr."
+  given_name: "Tanja"
+  family_name: "Kojić"
+  alternate_names: # spellings people type into search engines
+    - "Tanja Kojic"
+    - "Tanja Kojich"
+    - "Dr.-Ing. Tanja Kojić"
 
 
 # Analytics

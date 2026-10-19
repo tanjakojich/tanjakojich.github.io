@@ -9,7 +9,7 @@ redirect_from:
   - /resume/
 ---
 
-I am Dr. Tanja Kojić, exploring where new media and intelligent technologies meet, and how immersive solutions shape human experience across real and virtual worlds. 
+I am Dr. Tanja Kojić (also written Tanja Kojic), exploring where new media and intelligent technologies meet, and how immersive solutions shape human experience across real and virtual worlds. 
 
 As a Senior Researcher at the Quality and Usability Lab (QU Lab) at TU Berlin, my work focuses on the human side of immersive systems. I investigate how factors such as interaction design, embodiment, environment, and social context shape user experience, engagement, and acceptance. Rather than looking only at technical performance, I aim to understand how technology feels to users — whether it is intuitive, safe, inclusive, and meaningful in real-world situations. 
 
